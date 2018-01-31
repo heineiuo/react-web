@@ -1,0 +1,31 @@
+{
+  "name": "react-bucket-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react-bucket": "0.0.1-placeholder.2"
+  },
+  "devDependencies": {
+    "babili-webpack-plugin": "^0.1.2",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.9.0",
+    "stats-webpack-plugin": "^0.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-node-externals": "^1.6.0",
+    "webpack-system-register": "^1.5.1",
+    "webpack-visualizer-plugin": "^0.1.11"
+  }
+}
