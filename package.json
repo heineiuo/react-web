@@ -1,0 +1,45 @@
+{
+  "name": "react-bucket",
+  "version": "0.0.1-placeholder.2",
+  "description": "React全家桶:splash:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heineiuo/react-bucket.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heineiuo/react-bucket/issues"
+  },
+  "homepage": "https://github.com/heineiuo/react-bucket#readme",
+  "files": [
+    "*.js",
+    "umd",
+    "README.md"
+  ],
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "history": "^4.7.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-modal": "^3.1.11",
+    "react-motion": "^0.5.2",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "systemjs": "^0.20.19"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
