@@ -1,7 +1,14 @@
-
-import { React, AppRegistry, ReactRouter } from 'react-bucket'
-
+import { React, AppRegistry, ReactRouter, StyleSheet, css } from 'react-bucket'
 const { Switch, Route, Link, withRouter } = ReactRouter
+
+
+const styles = StyleSheet.create({
+  btn: {
+    color: '#FFF',
+    padding: '6px 10px',
+    backgroundColor: '#3344ee'
+  }
+})
 
 class App extends React.Component {
   static historyType = 'hash'
@@ -13,14 +20,14 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route path="/a">
-            <div>
-              <Link to="/">首页</Link>
+            <div >
+              <Link className={css(styles.btn)} to="/">首页</Link>
             </div>
           </Route>
 
           <Route path="/" exact>
-            <div>
-              <Link to="/a">a</Link>
+            <div >
+              <Link className={css(styles.btn)} to="/a">a</Link>
             </div>
           </Route>
 

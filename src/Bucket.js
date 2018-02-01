@@ -8,8 +8,32 @@ import * as Redux from 'redux'
 import * as ReactRedux from 'react-redux'
 import * as aphrodite from 'aphrodite/no-important'
 import PropTypes from 'prop-types'
-import * as ReactMotion from 'react-motion'
 
+/**
+ * Motion
+ */
+import * as ReactMotion from 'react-motion'
+const { Motion, spring } = ReactMotion
+export { Motion, spring }
+
+/**
+ * redux
+ */
+const { connect } = ReactRedux
+const { bindActionCreators } = Redux
+
+global.React = React
+global.ReactDOM = ReactDOM
+
+const { css, StyleSheet } = aphrodite
+const { Route, Link, Switch: RouteSwitch } = ReactRouter
+
+
+
+
+/**
+ * Integration Components
+ */
 import Button from './Button'
 import View from './View'
 import ListView from './ListView'
@@ -17,15 +41,31 @@ import Text from './Text'
 import TextInput from './TextInput'
 import AppRegistry from './AppRegistry'
 
-global.React = React
-global.ReactDOM = ReactDOM
+export {
+  AppRegistry,
+  Text,
+  TextInput,
+  View,
+  Button,
+  React,
+  ReactDOM,
+  ReactRouter,
+  ReactRedux,
+  ReactRouterRedux,
+  Component,
+  Modal,
+  Redux,
+  StyleSheet,
+  css,
+  PropTypes,
+  connect,
+  bindActionCreators,
+}
 
-const { css, StyleSheet } = aphrodite
-const { Motion, spring } = ReactMotion
-const { Route, Link, Switch: RouteSwitch } = ReactRouter
 
-Motion.spring = spring
-
+/**
+ * System registry
+ */
 const systemRegisties = [
   { name: 'react', default: React },
   { name: 'react-dom', default: ReactDOM },
@@ -43,23 +83,3 @@ systemRegisties.forEach(item => {
     System.newModule(item.default)
   )
 })
-
-export {
-  AppRegistry,
-  Text,
-  TextInput,
-  View,
-  Button,
-  React,
-  ReactDOM,
-  ReactRouter,
-  ReactRedux,
-  ReactRouterRedux,
-  Motion,
-  Component,
-  Modal,
-  Redux,
-  StyleSheet,
-  css,
-  PropTypes,
-}
