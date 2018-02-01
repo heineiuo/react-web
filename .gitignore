@@ -3,3 +3,4 @@ node_modules
 # !src/*.js
 !*.config.js
 .idea
+stats.html

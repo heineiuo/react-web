@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d ./",
-    "build:umd": "webpack"
+    "build:dev": "export NODE_ENV=development && webpack",
+    "build:umd": "export NODE_ENV=production && webpack"
   },
   "repository": {
     "type": "git",
@@ -34,10 +35,12 @@
     "react-motion": "^0.5.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "systemjs": "^0.20.19"
+    "systemjs": "^0.20.19",
+    "warning": "^3.0.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",
