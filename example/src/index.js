@@ -7,6 +7,8 @@ class App extends React.Component {
   static historyType = 'hash'
 
   render() {
+    console.log(this.props)
+    
     return (
       <div>
         <Switch>
