@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "React全家桶:splash:",
   "main": "index.js",
+  "browser": "umd/react-bucket.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d ./",
