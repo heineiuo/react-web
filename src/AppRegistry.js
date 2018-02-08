@@ -5,8 +5,8 @@ import { withRouter } from 'react-router-dom'
 import { createHashHistory, createBrowserHistory, createMemoryHistory } from 'history'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { routerReducer, routerMiddleware, ConnectedRouter } from 'react-router-redux'
-import warning from 'warning'
 import ReduxThunk from 'redux-thunk'
+import { warning } from './Utils'
 
 
 const AppRegistry = {
@@ -15,9 +15,9 @@ const AppRegistry = {
     const { historyType } = App
     const AppWithRouter = withRouter(App)
     const history = historyType === 'hash' ?
-      createHashHistory() : historyType === 'browser' ? 
-        createBrowserHistory() : 
-          createMemoryHistory()
+      createHashHistory() : historyType === 'browser' ?
+        createBrowserHistory() :
+        createMemoryHistory()
 
     const loggerMiddleware = store => next => action => {
       if (process.env.NODE_ENV !== 'production') console.warn(action)

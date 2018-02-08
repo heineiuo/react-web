@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import {throttle} from './Utils'
 
 class ScrollView extends Component {
 
@@ -14,7 +15,6 @@ class ScrollView extends Component {
       this.update(e)
     })
   }
-
   componentDidMount = () => {
     this.update()
     this.scrollTop = this.wrapper.scrollTop
@@ -36,19 +36,19 @@ class ScrollView extends Component {
   refWrapper = ref => this.wrapper = ref
   refChild = ref => this.child = ref
 
-  render(){
-    const { style = { }, children, width } = this.props
+  render() {
+    const { style = {}, children, width } = this.props
     const clonedChildren = React.cloneElement(children({
       width,
       scrollTop: this.scrollTop
     }), { ref: this.refChild })
     return (
-      <div 
+      <div
         ref={this.refWrapper}
         onWheel={this.onWheel}
         onScroll={this.onWheel}
-        style={Object.assign({overflowY: 'auto'}, style)}
-        >{clonedChildren}</div>
+        style={Object.assign({ overflowY: 'auto' }, style)}
+      >{clonedChildren}</div>
     )
   }
 }
