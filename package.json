@@ -1,6 +1,6 @@
 {
   "name": "react-bucket",
-  "version": "0.0.1-placeholder.2",
+  "version": "0.0.2",
   "description": "React全家桶:splash:",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "babel-runtime": "^6.26.0",
     "history": "^4.7.2",
     "inline-style-prefixer": "^4.0.0",
+    "lodash": "^4.17.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -52,7 +53,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babili-webpack-plugin": "^0.1.2",
-    "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "stats-webpack-plugin": "^0.6.2",
     "uglifyjs-webpack-plugin": "^1.1.8",

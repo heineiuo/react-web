@@ -9,6 +9,8 @@ import * as ReactRedux from 'react-redux'
 import PropTypes from 'prop-types'
 import * as Utils from './Utils'
 import StyleSheet from './StyleSheet'
+import * as history from 'history'
+import ReduxThunk from 'redux-thunk'
 
 /**
  * Motion
@@ -23,12 +25,7 @@ export { Motion, spring }
 const { connect } = ReactRedux
 const { bindActionCreators } = Redux
 
-global.React = React
-global.ReactDOM = ReactDOM
-
 const { Route, Link, Switch: RouteSwitch } = ReactRouter
-
-
 
 
 /**
@@ -63,16 +60,25 @@ export {
  * System registry
  */
 const systemRegisties = [
-  { name: 'react', default: React },
-  { name: 'react-dom', default: ReactDOM },
-  { name: 'react-router-dom', default: ReactRouter },
-  { name: 'react-redux', default: ReactRedux },
-  { name: 'react-router-redux', default: ReactRouterRedux },
-  { name: 'redux', default: Redux },
-  { name: 'react-modal', default: Modal },
+  { name: 'systemjs', default: System, aliasName: [] },
+  { name: 'react', default: React, aliasName: ['React'] },
+  { name: 'react-dom', default: ReactDOM, aliasName: ['ReactDOM'] },
+  { name: 'react-router-dom', default: ReactRouter, aliasName: ['ReactRouterDOM'] },
+  { name: 'react-redux', default: ReactRedux, aliasName: ['ReactRedux'] },
+  { name: 'react-router-redux', default: ReactRouterRedux, aliasName: ['ReactRouterRedux'] },
+  { name: 'redux', default: Redux, aliasName: ['Redux'] },
+  { name: 'react-modal', default: Modal, aliasName: ['ReactModal'] },
+  { name: 'react-motion', default: ReactMotion, aliasName: ['ReactMotion'] },
+  { name: 'redux-thunk', default: ReduxThunk, aliasName: ['ReduxThunk'] },
+  { name: 'prop-types', default: PropTypes, aliasName: ['PropTypes'] }
 ]
 
+
 systemRegisties.forEach(item => {
+  global[item.name] = item.default
+  item.aliasName.forEach(name => {
+    global[name] = item.default
+  })
   System.registry.set(
     System.resolveSync(item.name),
     System.newModule(item.default)
