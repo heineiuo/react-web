@@ -1,4 +1,4 @@
-import { React, AppRegistry, ReactRouter, StyleSheet, css } from 'react-bucket'
+import { React, AppRegistry, ReactRouter, StyleSheet } from 'react-bucket'
 const { Switch, Route, Link, withRouter } = ReactRouter
 
 
@@ -21,13 +21,13 @@ class App extends React.Component {
         <Switch>
           <Route path="/a">
             <div >
-              <Link className={css(styles.btn)} to="/">首页</Link>
+              <Link style={StyleSheet.assign(styles.btn)} to="/">首页</Link>
             </div>
           </Route>
 
           <Route path="/" exact>
             <div >
-              <Link className={css(styles.btn)} to="/a">a</Link>
+              <Link className={StyleSheet.assign(styles.btn)} to="/a">a</Link>
             </div>
           </Route>
 

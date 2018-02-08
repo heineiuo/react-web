@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import {throttle} from './Utils'
+import { throttle } from './Utils'
 
 class ScrollView extends Component {
 
@@ -21,7 +21,7 @@ class ScrollView extends Component {
   }
 
   update = (e) => {
-    this._tick = false    
+    this._tick = false
     const scrollTop = this.wrapper.scrollTop
     const wrapperHeight = this.wrapper.offsetHeight
     const childHeight = ReactDOM.findDOMNode(this.child).offsetHeight

@@ -8,6 +8,7 @@ import * as Redux from 'redux'
 import * as ReactRedux from 'react-redux'
 import PropTypes from 'prop-types'
 import * as Utils from './Utils'
+import StyleSheet from './StyleSheet'
 
 /**
  * Motion
@@ -51,7 +52,6 @@ export {
   Modal,
   Redux,
   StyleSheet,
-  css,
   PropTypes,
   connect,
   Utils,

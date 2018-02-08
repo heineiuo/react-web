@@ -5,10 +5,8 @@ import ScrollView from './ScrollView'
 import TextInput from './TextInput'
 import FilePicker from './FilePicker'
 import Box from './Box'
-import StyleSheet from './StyleSheet'
 
 export {
-  StyleSheet,
   View,
   Button,
   Box,
