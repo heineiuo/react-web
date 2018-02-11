@@ -1,6 +1,6 @@
-import { React, AppRegistry, ReactRouter, StyleSheet } from 'react-bucket'
+import { React, AppRegistry, ReactRouter, StyleSheet, View } from 'react-bucket'
+import Menu from './Menu'
 const { Switch, Route, Link, withRouter } = ReactRouter
-
 
 const styles = StyleSheet.create({
   btn: {
@@ -15,22 +15,31 @@ class App extends React.Component {
 
   render() {
     console.log(this.props)
-    
+
     return (
       <div>
         <Switch>
+
+          <Route path="/" exact>
+            <div >
+              <View>
+                <Link className={StyleSheet.assign(styles.btn)} to="/a">a</Link>
+              </View>
+              <View>
+                <Link className={StyleSheet.assign(styles.btn)} to="/menu">Menu</Link>
+              </View>
+            </div>
+          </Route>
+
           <Route path="/a">
             <div >
               <Link style={StyleSheet.assign(styles.btn)} to="/">首页</Link>
             </div>
           </Route>
 
-          <Route path="/" exact>
-            <div >
-              <Link className={StyleSheet.assign(styles.btn)} to="/a">a</Link>
-            </div>
-          </Route>
 
+
+          <Route path="/menu" component={Menu}></Route>
           <Route >
             <div> not found </div>
           </Route>

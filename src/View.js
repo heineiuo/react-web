@@ -25,6 +25,10 @@ class View extends Component {
     this.props.onMouseLeave && this.props.onMouseLeave(e)
   }
 
+  // ref = (callback) => {
+  //   callback(this._ref)
+  // }
+
   render() {
     const { isHovered } = this.state
     const { children, enableHover, style, className, hoverStyle, inline } = this.props
@@ -36,6 +40,7 @@ class View extends Component {
 
     const props = omit(this.props, ['enableHover', 'style', 'inline', 'hoverStyle'])
     props.style = StyleSheet.assign([style, isHovered && hoverStyle])
+    // props.ref = ref => this._ref = ref
 
     if (enableHover) {
       Object.assign(props, {
