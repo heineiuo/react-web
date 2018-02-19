@@ -21,14 +21,14 @@ class App extends React.Component {
         <Switch>
 
           <Route path="/" exact>
-            <div >
-              <View>
+            <View style={[{ boxShadow: '0 0 10px 0 #DDD', backgroundColor: '#00F'}, {backgroundColor: '#FFF'}]}>
+              <View >
                 <Link className={StyleSheet.assign(styles.btn)} to="/a">a</Link>
               </View>
               <View>
                 <Link className={StyleSheet.assign(styles.btn)} to="/menu">Menu</Link>
               </View>
-            </div>
+            </View>
           </Route>
 
           <Route path="/a">

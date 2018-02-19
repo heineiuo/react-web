@@ -6,6 +6,7 @@ import TextInput from './TextInput'
 import FilePicker from './FilePicker'
 import Box from './Box'
 import Menu from './Menu'
+import Popup from './Popup'
 
 export {
   View,
@@ -15,6 +16,7 @@ export {
   ScrollView,
   TextInput,
   Menu,
+  Popup,
 }
 
 export const Text = (props) => <span {...props}>{props.children}</span>

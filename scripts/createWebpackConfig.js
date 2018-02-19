@@ -13,6 +13,8 @@ const Visualizer = require('webpack-visualizer-plugin')
 
 const webpackLoaderExclude = (inNodeModuleButNeedCompile) => new RegExp('(node_modules\/)(?!' + inNodeModuleButNeedCompile.join('|') + ')')
 
+const __DEV__ = process.env.NODE_ENV === 'decelopment' || !(process.env.NODE_ENV === 'production')
+
 /**
  * webpack client config
  * @param configFile
@@ -44,7 +46,7 @@ const createWebpackConfig = (configFile) => {
     output: {
       path: distPath,
       publicPath: publicPath, // css中的图片地址的前缀, 可以加上域名
-      filename: '[name].js',
+      filename: `[name].${__DEV__ ? 'development' : 'production'}.js`,
       library: configFile.name,
       libraryTarget: configFile.platform === 'web' ? 'umd' : 'commonjs2',
       umdNamedDefine: configFile.platform === 'web' ? true : false

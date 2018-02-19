@@ -137,6 +137,7 @@ class Popup extends Component {
     }
 
     const overlayProps = {
+      closePopup: this.closeOverlay,
       getMountWrapper: this.getOverlayMountWrapper,
       portalStyle,
     }
