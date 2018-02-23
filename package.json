@@ -6,9 +6,10 @@
   "browser": "umd/react-bucket.production.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clear-js": "rm -rf ./*.js",
     "build": "babel src -d ./",
-    "build:dev": "export NODE_ENV=development && webpack",
-    "build:umd": "export NODE_ENV=production && webpack"
+    "build:dev": "cd scripts && export NODE_ENV=development && webpack",
+    "build:umd": "cd scripts && export NODE_ENV=production && webpack"
   },
   "repository": {
     "type": "git",

@@ -22,24 +22,26 @@ const __DEV__ = process.env.NODE_ENV === 'decelopment' || !(process.env.NODE_ENV
  */
 const createWebpackConfig = (configFile) => {
 
+  const { workDir } = configFile
+
   defaults(configFile, {
     platform: 'web'
   })
 
   const pkgFolder = configFile.outputDir
-  const distPath = path.resolve(process.cwd(), pkgFolder)
+  const distPath = path.resolve(workDir, pkgFolder)
   const devPublicPath = `http://127.0.0.1:${configFile.port}/${configFile.name}/`
   const publicPath = `https://unpkg.com/${configFile.name}@${configFile.version}/`
 
   const config = {
-    context: __dirname,
+    context: workDir,
     devtool: false,
     node: {
       fs: 'empty'
     },
     entry: {
       [configFile.name]: [
-        path.join(process.cwd(), configFile.devEntry)
+        path.resolve(workDir, configFile.devEntry)
       ]
     },
     target: configFile.platform,
@@ -57,8 +59,7 @@ const createWebpackConfig = (configFile) => {
       extensions: ['.jsx', '.js', '.json'],
       modules: [
         'node_modules',
-        path.resolve(__dirname, `./node_modules`),
-        path.resolve(`${process.cwd()}/node_modules`)
+        path.resolve(workDir, `node_modules`),
       ]
     },
     module: {
@@ -114,7 +115,7 @@ const createWebpackConfig = (configFile) => {
 
   if (configFile.alias) {
     configFile.alias.forEach(aliasItem => {
-      config.resolve.alias[aliasItem.commonjs] = path.resolve(`${process.cwd()}/node_modules`, aliasItem.path)
+      config.resolve.alias[aliasItem.commonjs] = path.resolve(`${workDir}/node_modules`, aliasItem.path)
       // console.log(config.resolve.alias[aliasItem])
     })
   }
