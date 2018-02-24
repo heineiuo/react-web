@@ -11,9 +11,9 @@ const defaults = require('lodash/defaults')
 const StatsPlugin = require('stats-webpack-plugin')
 const Visualizer = require('webpack-visualizer-plugin')
 
-const webpackLoaderExclude = (inNodeModuleButNeedCompile) => new RegExp('(node_modules\/)(?!' + inNodeModuleButNeedCompile.join('|') + ')')
-
-const __DEV__ = process.env.NODE_ENV === 'decelopment' || !(process.env.NODE_ENV === 'production')
+const webpackLoaderExclude = (inNodeModuleButNeedCompile) => {
+  return new RegExp('(node_modules\/)(?!' + inNodeModuleButNeedCompile.join('|') + ')')
+}
 
 /**
  * webpack client config
@@ -22,44 +22,64 @@ const __DEV__ = process.env.NODE_ENV === 'decelopment' || !(process.env.NODE_ENV
  */
 const createWebpackConfig = (configFile) => {
 
-  const { workDir } = configFile
-
   defaults(configFile, {
-    platform: 'web'
+    __DEV__: process.env.NODE_ENV === 'decelopment' || !(process.env.NODE_ENV === 'production'),
+    context: process.cwd(),
+    platform: 'web',
+    nodeModulesDir: './node_modules',
+    packageFile: './package.json',
+    outputDir: './umd',
+    devUnpkgOrigin: 'http://localhost:8080',
+    unpkgOrigin: 'https://unpkg.com'
   })
 
-  const pkgFolder = configFile.outputDir
-  const distPath = path.resolve(workDir, pkgFolder)
-  const devPublicPath = `http://127.0.0.1:${configFile.port}/${configFile.name}/`
-  const publicPath = `https://unpkg.com/${configFile.name}@${configFile.version}/`
+  const {
+    __DEV__,
+    context,
+    platform,
+    nodeModulesDir,
+    packageFile,
+    outputDir,
+    devUnpkgOrigin,
+    unpkgOrigin,
+  } = configFile
+
+  const packageJSON = JSON.parse(
+    fs.readFileSync(path.resolve(context, packageFile), 'utf8')
+  )
+
+  const nodeModulesPath = path.resolve(context, nodeModulesDir)
+  const outputPath = path.resolve(context, outputDir)
+  const publicPath = `${__DEV__ ? devUnpkgOrigin : unpkgOrigin}` + path.resolve(`/${packageJSON.name}@${packageJSON.version}/`, outputDir)
+  const entryName = path.basename(packageJSON.name)
 
   const config = {
-    context: workDir,
+    context,
     devtool: false,
     node: {
       fs: 'empty'
     },
     entry: {
-      [configFile.name]: [
-        path.resolve(workDir, configFile.devEntry)
+      [entryName]: [
+        path.resolve(context, configFile.entry)
       ]
     },
-    target: configFile.platform,
+    target: platform,
     output: {
-      path: distPath,
+      path: outputPath,
       publicPath: publicPath, // css中的图片地址的前缀, 可以加上域名
       filename: `[name].${__DEV__ ? 'development' : 'production'}.js`,
-      library: configFile.name,
-      libraryTarget: configFile.platform === 'web' ? 'umd' : 'commonjs2',
-      umdNamedDefine: configFile.platform === 'web' ? true : false
+      library: packageJSON.name,
+      libraryTarget: platform === 'web' ? 'umd' : 'commonjs2',
+      umdNamedDefine: platform === 'web' ? true : false
     },
-    externals: configFile.platform === 'node' ? [nodeExternals()] : {},
+    externals: platform === 'node' ? [nodeExternals()] : {},
     resolve: {
       alias: {},
       extensions: ['.jsx', '.js', '.json'],
       modules: [
         'node_modules',
-        path.resolve(workDir, `node_modules`),
+        path.resolve(context, `node_modules`),
       ]
     },
     module: {
@@ -115,7 +135,7 @@ const createWebpackConfig = (configFile) => {
 
   if (configFile.alias) {
     configFile.alias.forEach(aliasItem => {
-      config.resolve.alias[aliasItem.commonjs] = path.resolve(`${workDir}/node_modules`, aliasItem.path)
+      config.resolve.alias[aliasItem.commonjs] = path.resolve(nodeModulesPath, aliasItem.path)
       // console.log(config.resolve.alias[aliasItem])
     })
   }
@@ -131,7 +151,12 @@ const createWebpackConfig = (configFile) => {
     //   test: /\.js($|\?)/i
     // }))
   }
-  if (configFile.production) {
+  if (__DEV__) {
+    // console.log(`[webpack configure] use define plugin, NODE_ENV: development`)
+    config.plugins.push(new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }))
+  } else {
     // console.log(`[webpack configure] use define plugin, NODE_ENV: production`)
     // config.plugins.push(
     //   new StatsPlugin(`./stats.json`, {
@@ -147,18 +172,11 @@ const createWebpackConfig = (configFile) => {
     config.plugins.push(new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }))
-  } else {
-    config.output.publicPath = devPublicPath
-    // console.log(`[webpack configure] use define plugin, NODE_ENV: development`)
-    config.plugins.push(new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    }))
   }
 
   return config
 
 }
-
 
 module.exports = createWebpackConfig
 

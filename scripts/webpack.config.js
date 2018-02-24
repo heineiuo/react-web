@@ -2,20 +2,18 @@ const fs = require('fs')
 const path = require('path')
 const createWebpackConfig = require('./createWebpackConfig')
 
-const packageFile = JSON.parse(fs.readFileSync('../package.json', 'UTF-8'))
 const __DEV__ = process.env.NODE_ENV === 'development'
 
 module.exports = createWebpackConfig({
-  platform: 'web',
-  workDir: path.resolve(__dirname, '..'),
+  context: path.resolve(__dirname, '..'),
+  entry: './src/index.js',
+  packageFile: './package.json',
   outputDir: './umd',
-  name: packageFile.name,
+  nodeModulesDir: './node_modules',
+  platform: 'web',
   compress: !__DEV__,
-  production: !__DEV__,
-  devEntry: './src/index.js',
+  __DEV__,
   alias: [
     {"commonjs": "systemjs", "path": "./systemjs/dist/system.js"},
   ],
-  version: packageFile.version,
 })
-
