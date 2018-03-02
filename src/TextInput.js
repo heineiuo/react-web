@@ -45,6 +45,10 @@ class TextInput extends Component {
     this.props.onBlur && this.props.onBlur(e)
   }
 
+  focus = (e) => {
+    this._input.focus()
+  }
+
   render() {
     const { isFocused } = this.state
     const { children, enableFocus, type, withAffix, style, focusStyle } = this.props
@@ -65,6 +69,7 @@ class TextInput extends Component {
 
     return (
       <input
+        ref={ref => this._input = ref}
         {...inputProps}
       />
     )

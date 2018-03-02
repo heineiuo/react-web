@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear-js": "rm -rf ./*.js",
     "build": "babel src -d ./",
-    "build:dev": "cross-env NODE_ENV=development && cd scripts && webpack",
-    "build:umd": "cross-env NODE_ENV=production && cd scripts && webpack"
+    "build:dev": "cd scripts && cross-env NODE_ENV=development webpack",
+    "build:umd": "cd scripts && cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",

@@ -23,7 +23,7 @@ const webpackLoaderExclude = (inNodeModuleButNeedCompile) => {
 const createWebpackConfig = (configFile) => {
 
   defaults(configFile, {
-    __DEV__: process.env.NODE_ENV === 'decelopment' || !(process.env.NODE_ENV === 'production'),
+    __DEV__: process.env.NODE_ENV =! 'production',
     context: process.cwd(),
     platform: 'web',
     nodeModulesDir: './node_modules',
