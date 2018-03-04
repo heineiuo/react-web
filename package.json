@@ -1,6 +1,6 @@
 {
   "name": "react-bucket",
-  "version": "0.0.3-bugfix.1",
+  "version": "0.0.4",
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear-js": "rm -rf ./*.js",
     "build": "babel src -d ./",
-    "build:dev": "cd scripts && cross-env NODE_ENV=development webpack",
+    "build:umd-dev": "cd scripts && cross-env NODE_ENV=development webpack",
     "build:umd": "cd scripts && cross-env NODE_ENV=production webpack"
   },
   "repository": {
