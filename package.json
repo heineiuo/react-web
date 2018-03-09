@@ -1,15 +1,17 @@
 {
   "name": "react-bucket",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clear-js": "rm -rf ./*.js",
+    "build:clear": "rm -rf ./*.js",
     "build": "babel src -d ./",
     "build:umd-dev": "cd scripts && cross-env NODE_ENV=development webpack",
-    "build:umd": "cd scripts && cross-env NODE_ENV=production webpack"
+    "build:umd": "cd scripts && cross-env NODE_ENV=production webpack",
+    "prepublish": "npm run build:clear && npm run build && npm run build:umd-dev && npm run build:umd",
+    "postpublish": "npm run build:clear"
   },
   "repository": {
     "type": "git",
