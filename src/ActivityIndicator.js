@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import StyleSheet from './StyleSheet'
+import { Keyframes, Frame } from './Keyframes'
+import View from './View'
 
 const bars = Array.from({ length: 12 }, v => 0)
 
@@ -7,64 +9,80 @@ class ActivityIndicator extends Component {
 
   static defaultProps = {
     color: 'black',
-    size: 60
+    size: 60,
+    delay: 0,
+    animating: true,
+    style: {}
+  }
+
+
+  renderStatic = ({ increment }) => {
+    const { color } = this.props
+
+    return bars.map((item, index) => {
+      let remainder = (index + increment) % 11
+      let opacity = remainder < 6 ? 0.12 : remainder / 11
+      return (
+        <View
+          key={index}
+          style={[styles.spinner__bar, {
+            backgroundColor: color,
+            transform: 'rotate(' + (index * 30) + 'deg)',
+            opacity: opacity
+          }]}
+        />
+      )
+    })
   }
 
   render() {
+    const Static = this.renderStatic
+    const { size, animating, style, delay } = this.props
 
-    const { color, size } = this.props
-
-    const spinnerStyle = {
-      width: size,
-      height: size,
-      marginLeft: - size * 0.15,
-      marginTop: - size * 0.15
-    }
+    if (!animating) return null
 
     return (
-      <div style={[styles.spinner, spinnerStyle]}>
-        {bars.map((item, index) => {
-          return (
-            <div
-              key={index}
-              style={[styles.spinner__bar, {
-                backgroundColor: color,
-                animationDelay: (index - 12) / 10 + 's',
-                transform: 'rotate(' + (index * 30) + 'deg) translate(146%)'
-              }]}
-            />
-          )
-        })}
-      </div>
+      <View style={[styles.spinner, style, {
+        transform: `scale(${size / 120})`
+      }]}>
+        <Keyframes
+          delay={delay}
+          component="div"
+          loop={true}
+        >
+          <Frame duration={100}><Static rotate={0} increment={10} /></Frame>
+          <Frame duration={100}><Static rotate={180} increment={8} /></Frame>
+          <Frame duration={100}><Static rotate={180} increment={6} /></Frame>
+          <Frame duration={100}><Static rotate={180} increment={4} /></Frame>
+          <Frame duration={100}><Static rotate={180} increment={2} /></Frame>
+          <Frame duration={100}><Static rotate={180} increment={0} /></Frame>
+        </Keyframes>
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   spinner: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
+    position: 'relative',
+    // transformOrigin: `60px 60px`,
+    // transform: `rotate(${rotate}deg)`,    
+    // transition: 'all 0.8s linear',
+    width: 120,
+    height: 120,
   },
 
   spinner__bar: {
-    // TODO rewrite by js
-    animationName: [{
-      '0%': {
-        opacity: 1
-      },
-      '100%': {
-        opacity: 0.15,
-      },
-    }],
-    animationDuration: '1.2s',
-    animationTimingFunction: 'linear',
-    animationIterationCount: 'infinite',
+    transformOrigin: '5px 60px',
+    transition: 'all 0.12s linear',
     borderRadius: '5px',
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     position: 'absolute',
-    width: '20%',
-    height: '7.8%',
+    top: 0,
+    left: 60,
+    marginLeft: -5,
+    width: 10,
+    height: 30,
   }
 })
 

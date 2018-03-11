@@ -11,6 +11,7 @@ import * as history from 'history'
 import ReduxThunk from 'redux-thunk'
 import * as Utils from './Utils'
 import StyleSheet from './StyleSheet'
+import ActivityIndicator from './ActivityIndicator'
 
 /**
  * Motion
@@ -39,6 +40,7 @@ export * from './Components'
 import AppRegistry from './AppRegistry'
 
 export {
+  ActivityIndicator,
   AppRegistry,
   React,
   ReactDOM,

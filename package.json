@@ -25,6 +25,7 @@
   "homepage": "https://github.com/heineiuo/react-bucket#readme",
   "files": [
     "*.js",
+    "*.d.ts",
     "!*.config.js",
     "umd/*.js",
     "README.md"
@@ -38,6 +39,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-keyframes": "^0.2.3",
     "react-modal": "^3.1.11",
     "react-motion": "^0.5.2",
     "react-redux": "^5.0.6",
