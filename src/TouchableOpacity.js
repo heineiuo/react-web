@@ -8,7 +8,7 @@ class TouchableOpacity extends Component {
     onMouseDown: () => { },
     onMouseUp: () => { },
     onTouchStart: () => { },
-    onTouchLeave: () => { },
+    onMouseLeave: () => { },
     onTouchEnd: () => { },
   }
 
