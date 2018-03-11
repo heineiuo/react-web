@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import StyleSheet from './StyleSheet'
 import { omit } from './Utils'
+import View from './View'
+import TouchableOpacity from './TouchableOpacity'
 
 class Button extends Component {
 
   static defaultProps = {
-    type: 'normal',
-    noBackground: false,
-    level: 'primary',
+    color: '#1194f6',
+    disabled: false,
     style: {},
     renderIcon: () => null,
   }
@@ -25,27 +26,27 @@ class Button extends Component {
   }
 
   render() {
-    const { children, type, noBackground, level, style } = this.props
+    const { children, type, noBackground, level, style, color, } = this.props
     const BackArrow = this.renderBackArrow
     if (type === 'back-arrow') return <BackArrow />
     const props = omit(this.props, [
-      'isHovered',
-      'type', 'state', 'dispatch', 'noBackground', 'level', 'renderIcon'
-    ])
-
-    props.style = StyleSheet.assign([
-      baseStyle,
-      noBackground && styles.noBackground,
-      levels[`level_${level}`],
-      style
+      'state', 'dispatch', 'renderIcon', 'color', 'disabled', 'style'
     ])
 
     const Icon = this.props.renderIcon
     return (
-      <button {...props}>
-        <Icon fill={props.style.color} />
-        {children}
-      </button>
+      <TouchableOpacity
+        {...props}
+        style={StyleSheet.assign([styles.btn, {
+          color: '#FFF',
+          backgroundColor: color
+        }, style])}
+      >
+        <Icon />
+        <View>
+          {children}
+        </View>
+      </TouchableOpacity>
     )
   }
 }
@@ -55,24 +56,33 @@ const baseStyle = {
   outline: 'none'
 }
 
-const levels = {
-  level_primary: { color: '#537994', ":hover": { color: '#2e4453' } },
-  level_secondary: { color: '#537994', ":hover": { color: '#2e4453' } },
-  level_warning: { color: '#537994', ":hover": { color: '#2e4453' } },
-  level_danger: { color: '#537994', ":hover": { color: '#d94f4f' } },
+export const colors = {
+  primary: "#537994",
+  secondary: "#537994",
+  warning: "#537994",
+  danger: "#537994",
 }
 
 const styles = StyleSheet.create({
-  noBackground: {
+  btn: {
+    cursor: 'pointer',
     fontSize: 14,
-    border: 0,
-    backgroundColor: 'transparent',
     display: 'flex',
+    textAlign: 'center',
     alignItems: 'center',
-    ":hover": {
-      cursor: 'pointer',
-    }
+    justifyContent: 'center',
+    flexDirection: 'row',
+    height: 30,
+    borderRadius: 3,
+    marginBottom: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    // border: 0,
   },
+
+  btn_text: {
+    // alignSelf: '',
+  }
 })
 
 export default Button
