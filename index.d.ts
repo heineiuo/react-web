@@ -16,15 +16,34 @@ export interface ButtonProps {
   // ...
 }
 
-declare class Button extends React.Component<ButtonProps, any> { 
+declare class Button extends React.Component<ButtonProps, any> {
 
 }
 
 export interface ImageProps {
-  
+
 }
 
 declare class Image extends React.Component<ImageProps, any> {
+
+}
+
+
+export interface ViewProps {
+  hoverStyle?: object | array;
+  style?: object | array;
+  enableHover?: boolean;
+}
+
+declare class View extends React.Component<ViewProps, any> {
+
+}
+
+export interface PromiseViewProps {
+  promise: Promise<any>
+}
+
+declare class PromiseView extends React.Component<PromiseViewProps, any> {
 
 }
 
@@ -66,5 +85,5 @@ declare class Image extends React.Component<ImageProps, any> {
      *~   import * as yourMod from 'yourModule';
      *~   yourMod.subProp.foo();
      */
-    
+
 // }

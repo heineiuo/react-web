@@ -7,6 +7,7 @@ import FilePicker from './FilePicker'
 import Box from './Box'
 import Menu from './Menu'
 import Popup from './Popup'
+import TouchableOpacity from './TouchableOpacity'
 
 export {
   View,
@@ -17,6 +18,7 @@ export {
   TextInput,
   Menu,
   Popup,
+  TouchableOpacity,
 }
 
 export const Text = (props) => <span {...props}>{props.children}</span>
