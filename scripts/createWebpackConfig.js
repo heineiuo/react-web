@@ -11,8 +11,10 @@ const defaults = require('lodash/defaults')
 const StatsPlugin = require('stats-webpack-plugin')
 const Visualizer = require('webpack-visualizer-plugin')
 
-const webpackLoaderExclude = (inNodeModuleButNeedCompile) => {
-  return new RegExp('(node_modules\/)(?!' + inNodeModuleButNeedCompile.join('|') + ')')
+const webpackLoaderExclude = (inNodeModuleButNeedCompile = []) => {
+  return new RegExp(
+    `node_modules/(?!(${inNodeModuleButNeedCompile.join('|')})/).*`
+  )
 }
 
 /**
