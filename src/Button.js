@@ -39,6 +39,7 @@ class Button extends Component {
         {...props}
         style={StyleSheet.assign([styles.btn, {
           color: '#FFF',
+          borderColor: color,
           backgroundColor: color
         }, style])}
       >
@@ -77,7 +78,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     paddingLeft: 5,
     paddingRight: 5,
-    // border: 0,
+    borderWidth: 1,
+    borderStyle: 'solid',
   },
 
   btn_text: {
