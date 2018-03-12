@@ -9,6 +9,7 @@ import Menu from './Menu'
 import Popup from './Popup'
 import TouchableOpacity from './TouchableOpacity'
 import PromiseView from './PromiseView'
+import Text from './Text'
 
 export {
   View,
@@ -23,7 +24,6 @@ export {
   PromiseView,
 }
 
-export const Text = (props) => <span {...props}>{props.children}</span>
 
 export const Style = (props) => <style {...props}>{props.children}</style>
 
