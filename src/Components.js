@@ -18,6 +18,7 @@ export {
   FilePicker,
   ScrollView,
   TextInput,
+  Text,
   Menu,
   Popup,
   TouchableOpacity,
