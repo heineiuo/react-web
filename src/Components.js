@@ -8,6 +8,7 @@ import Box from './Box'
 import Menu from './Menu'
 import Popup from './Popup'
 import TouchableOpacity from './TouchableOpacity'
+import PromiseView from './PromiseView'
 
 export {
   View,
@@ -19,6 +20,7 @@ export {
   Menu,
   Popup,
   TouchableOpacity,
+  PromiseView,
 }
 
 export const Text = (props) => <span {...props}>{props.children}</span>

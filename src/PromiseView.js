@@ -30,7 +30,7 @@ class PromiseView extends Component {
     if (!(props.promise instanceof Promise)) {
       this.setState({ status: 'none' })
       if (props.onChange) props.onChange('none')
-      this.listener = 'none'
+      this.listener = null
     } else {
       this.setState({ status: 'pending' })
       if (props.onChange) props.onChange('pending')
@@ -43,14 +43,14 @@ class PromiseView extends Component {
   }
 
   componentWillUnmount = () => {
-    this.listener.removeAllListeners()
+    if (this.listener) this.listener.removeAllListeners()
   }
 
   render() {
-    const { render, children } = this.props
+    const { render, children = null } = this.props
     if (typeof render === 'function') return render(this.state.status, this.state.result)
     if (typeof children === 'function') return children(this.state.status, this.state.result)
-    return this.props.children
+    return children
   }
 }
 
