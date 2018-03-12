@@ -20,18 +20,16 @@ declare class Button extends React.Component<ButtonProps, any> {
 
 }
 
-export interface ImageProps {
-
-}
-
-declare class Image extends React.Component<ImageProps, any> {
+declare class Image extends React.Component<{
+  url: string,
+}, any> {
 
 }
 
 
 export interface ViewProps {
-  hoverStyle?: object | array;
-  style?: object | array;
+  hoverStyle?: object | object[];
+  style?: object | object[];
   enableHover?: boolean;
 }
 
@@ -44,6 +42,30 @@ export interface PromiseViewProps {
 }
 
 declare class PromiseView extends React.Component<PromiseViewProps, any> {
+
+}
+
+declare class FilePicker extends React.Component<{
+  multiple?: boolean | true;
+  accept?: string;
+  tag?: string;
+  className?: string;
+  style?:object | object[];
+  disabled?: boolean | false;
+  withObjectUrl?: boolean;
+  onFileChange?: () => {};
+}, any> {
+
+}
+
+declare class TextInput extends React.Component<{
+  enableFocus?: boolean;
+  focusStyle?: object | object[];
+  affix?: string;
+  withAffix?: boolean;
+  type?: string;
+  dispatch?: () => {};
+}, any> {
 
 }
 
