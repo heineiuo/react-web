@@ -14,6 +14,9 @@ export const __unstable_P2E = (promise) => {
 }
 
 class PromiseView extends Component {
+  static defaultProps = {
+    onStateChange: new Function()
+  }
 
   componentWillReceiveProps = (nextProps) => {
     if (nextProps.promise != this.props.promise) {
@@ -29,15 +32,15 @@ class PromiseView extends Component {
     if (this.listener) this.listener.removeAllListeners()
     if (!(props.promise instanceof Promise)) {
       this.setState({ status: 'none' })
-      if (props.onChange) props.onChange('none')
+      props.onStateChange('none')
       this.listener = null
     } else {
       this.setState({ status: 'pending' })
-      if (props.onChange) props.onChange('pending')
+      props.onStateChange('pending')
       this.listener = __unstable_P2E(props.promise)
       this.listener.on('change', (status, result) => {
         this.setState({ status, result })
-        if (props.onChange) props.onChange(status, result)
+        props.onStateChange(status, result)
       })
     }
   }
