@@ -51,10 +51,10 @@ class TextInput extends Component {
 
   render() {
     const { isFocused } = this.state
-    const { children, enableFocus, type, withAffix, style, focusStyle } = this.props
+    const { children, enableFocus, type, withAffix, style, focusStyle, color } = this.props
     const inputProps = omit(this.props, Object.keys(TextInput.propTypes).concat([]))
 
-    inputProps.style = StyleSheet.assign([styles.input, style, isFocused && focusStyle])
+    inputProps.style = StyleSheet.assign([styles.input, style, isFocused && [styles.input_focus, focusStyle]])
 
     if (withAffix) {
       return this.renderWithAffix({ inputProps })
@@ -97,6 +97,15 @@ const styles = StyleSheet.create({
     boxSizing: 'border-box',
     outline: 'none',
     fontSize: 14,
+    borderWidth: 1,
+    borderRadius: 3,
+    borderColor: '#a0a0a0',
+    display: 'block',
+    width: '100%',
+    borderStyle: 'solid'
+  },
+  input_focus: {
+    borderColor: '#505050'
   }
 })
 
