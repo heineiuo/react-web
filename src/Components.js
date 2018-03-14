@@ -11,6 +11,7 @@ import TouchableOpacity from './TouchableOpacity'
 import PromiseView from './PromiseView'
 import Text from './Text'
 import Image from './Image'
+import Slider from './Slider'
 
 export {
   View,
@@ -23,6 +24,7 @@ export {
   Image,
   Menu,
   Popup,
+  Slider,
   TouchableOpacity,
   PromiseView,
 }
