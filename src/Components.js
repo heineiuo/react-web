@@ -10,6 +10,7 @@ import Popup from './Popup'
 import TouchableOpacity from './TouchableOpacity'
 import PromiseView from './PromiseView'
 import Text from './Text'
+import Image from './Image'
 
 export {
   View,
@@ -19,6 +20,7 @@ export {
   ScrollView,
   TextInput,
   Text,
+  Image,
   Menu,
   Popup,
   TouchableOpacity,
@@ -27,15 +29,3 @@ export {
 
 
 export const Style = (props) => <style {...props}>{props.children}</style>
-
-export const Image = (props) => {
-  const validProps = {}
-  Object.keys(props).forEach(key => {
-    if (!['url'].includes(key)) {
-      validProps[key] = props[key]
-    }
-  })
-  return (
-    <img src={props.url} {...validProps} />
-  )
-}
