@@ -38,7 +38,9 @@ declare class View extends React.Component<ViewProps, any> {
 }
 
 export interface PromiseViewProps {
-  promise: Promise<any>
+  promise: Promise<any>,
+  onStateChange?: (status: string, result: any) => {},
+  render?: (status: string, result: any) => {},
 }
 
 declare class PromiseView extends React.Component<PromiseViewProps, any> {
@@ -50,7 +52,7 @@ declare class FilePicker extends React.Component<{
   accept?: string;
   tag?: string;
   className?: string;
-  style?:object | object[];
+  style?: object | object[];
   disabled?: boolean | false;
   withObjectUrl?: boolean;
   onFileChange?: () => {};
