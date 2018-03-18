@@ -1,6 +1,6 @@
 {
   "name": "react-bucket",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",

@@ -5,6 +5,7 @@ import PromiseView from './PromiseView'
 import View from './View'
 import ActivityIndicator from './ActivityIndicator'
 import isBase64 from 'is-base64'
+// import isEqual from 'lodash/isEqual'
 
 const cache = {}
 
