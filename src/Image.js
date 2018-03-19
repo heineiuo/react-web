@@ -18,6 +18,8 @@ class Image extends Component {
   }
 
   state = {
+    // fetchCache: 'only-if-cached'
+    fetchCache: 'force-cache'
   }
 
   componentWillMount = () => {
@@ -43,7 +45,10 @@ class Image extends Component {
           return resolve(url)
         }
 
-        fetch(url).then((res) => {
+        // console.log(`<Image>: cache: ${this.state.fetchCache}`)
+        fetch(url, {
+          cache: this.state.fetchCache
+        }).then((res) => {
           return res.blob()
         }).then((imgBlob) => {
           const objectURL = URL.createObjectURL(imgBlob)
