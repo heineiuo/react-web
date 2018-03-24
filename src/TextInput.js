@@ -55,6 +55,7 @@ class TextInput extends Component {
     const inputProps = omit(this.props, Object.keys(TextInput.propTypes).concat([]))
 
     inputProps.style = StyleSheet.assign([styles.input, style, isFocused && [styles.input_focus, focusStyle]])
+    inputProps.type = this.props.type
 
     if (withAffix) {
       return this.renderWithAffix({ inputProps })
