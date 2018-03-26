@@ -85,30 +85,30 @@ class Popup extends Component {
   }
 
   onClick = (e) => {
-    if (this.props.action.includes('click')) {
-      this.setState({ open: !this.state.open }, () => {
-        this.props.onToggle({ open: this.state.open })
-      })
-      this.props.onClick(e)
-    }
+    this.setState({ open: !this.state.open }, () => {
+      this.props.onToggle({ open: this.state.open })
+    })
+    this.props.onClick(e)
   }
 
   onMouseEnter = e => {
-    if (this.props.action.includes('hover')) {
-      this.setState({ open: true }, () => {
-        this.props.onToggle({ open: this.state.open })
-      })
-    }
+    this.setState({ open: true }, () => {
+      this.props.onToggle({ open: this.state.open })
+    })
   }
 
-  onMouseLeave = e => {
-    if (this.props.action.includes('hover')) {
-      if (!this.wrapper.contains(e.target) && (!this.portal || !this.portal.contains(e.target))) {
-        this.setState({ open: false }, () => {
-          this.props.onToggle({ open: this.state.open })
-        })
-      }
+  onMouseLeaveWrapper = e => {
+    if (!!this.portal && this.portal.contains(e.target)) {
+      return false
     }
+    this.onCloseOverlay(e)
+  }
+
+  onMouseLeavePortal = e => {
+    if (this.wrapper.contains(e.target)) {
+      return false
+    }
+    this.onCloseOverlay(e)
   }
 
   closeOverlay = () => {
@@ -119,12 +119,10 @@ class Popup extends Component {
 
   onCloseOverlay = e => {
     this.closeOverlay()
-    e.preventDefault()
-    e.stopPropagation()
   }
 
   render() {
-    const { className, style, renderOverlay } = this.props
+    const { className, style, renderOverlay, action } = this.props
     const { open } = this.state
     const WrapperComponent = this.props.component || View
 
@@ -135,6 +133,16 @@ class Popup extends Component {
       top: this.state.top + this.state.height + this.props.offsetTop,
       left: this.state.left + this.props.offsetLeft,
     }
+    const wrapperEventProps = {}
+    const portalEventProps = {}
+    if (action.includes('click')) {
+      wrapperEventProps.onClick = this.onClick
+    }
+    if (action.includes('hover')) {
+      wrapperEventProps.onMouseEnter = this.onMouseEnter
+      wrapperEventProps.onMouseLeave = this.onMouseLeaveWrapper
+      portalEventProps.onMouseLeave = this.onMouseLeavePortal
+    }
 
     const overlayProps = {
       closePopup: this.closeOverlay,
@@ -144,19 +152,16 @@ class Popup extends Component {
     return [
       <WrapperComponent
         key="trigger"
-        onClick={this.onClick}
         ref={this.getWrapper}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
         className={className}
+        {...wrapperEventProps}
       >
         {this.props.children}
       </WrapperComponent>,
       ReactDOM.createPortal(
         <View
           ref={this.getPortal}
-          onMouseLeave={this.onMouseLeave}
-          // style={portalStyle}
+          {...portalEventProps}
         >
           {!open ? null : renderOverlay(overlayProps)}
         </View>,
