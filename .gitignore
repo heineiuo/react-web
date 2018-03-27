@@ -6,3 +6,4 @@ node_modules
 .idea
 stats.html
 umd/*.js
+storybook-static

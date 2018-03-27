@@ -11,7 +11,9 @@
     "build:umd-dev": "cd scripts && cross-env NODE_ENV=development webpack",
     "build:umd": "cd scripts && cross-env NODE_ENV=production webpack",
     "prepublish": "npm run build:clear && npm run build && npm run build:umd-dev && npm run build:umd",
-    "postpublish": "npm run build:clear"
+    "postpublish": "npm run build:clear",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -68,6 +70,11 @@
     "webpack": "^3.10.0",
     "webpack-node-externals": "^1.6.0",
     "webpack-system-register": "^1.5.1",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "webpack-visualizer-plugin": "^0.1.11",
+    "@storybook/react": "^3.3.15",
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15",
+    "@storybook/addons": "^3.3.15",
+    "babel-core": "^6.26.0"
   }
 }
