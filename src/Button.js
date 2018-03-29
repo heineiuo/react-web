@@ -44,9 +44,7 @@ class Button extends Component {
         }, style])}
       >
         <Icon />
-        <View>
-          {children}
-        </View>
+        {children}
       </TouchableOpacity>
     )
   }
