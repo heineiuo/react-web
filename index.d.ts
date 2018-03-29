@@ -5,7 +5,6 @@
 import * as React from 'react';
 
 export interface ButtonProps {
-  noBackground?: boolean;
   autofocus?: boolean;
   cancelKeyboardEventOnSelection?: boolean;
   className?: string;
@@ -13,6 +12,10 @@ export interface ButtonProps {
   // defaultValue?: OptionValue;
   delimiters?: [any];
   disabled?: boolean;
+  color?: string;
+  disabled?: boolean = false
+  style?: any;
+  renderIcon: () => React.ReactElement
   // ...
 }
 
