@@ -17,6 +17,7 @@ class Popup extends Component {
     onToggle: () => { },
     offsetTop: 0,
     offsetLeft: 0,
+    renderOverlay: () => null,
     className: '',
     component: 'div',
     action: ['click']
@@ -71,8 +72,8 @@ class Popup extends Component {
     this.el.remove()
   }
 
-  getWrapper = ref => this.wrapper = ReactDOM.findDOMNode(ref)
-  getPortal = ref => this.portal = ReactDOM.findDOMNode(ref)
+  getWrapperRef = ref => this.wrapper = ReactDOM.findDOMNode(ref)
+  getPortalRef = ref => this.portal = ReactDOM.findDOMNode(ref)
 
   getOverlayMountWrapper = () => {
     return this.portal
@@ -152,7 +153,7 @@ class Popup extends Component {
     return [
       <WrapperComponent
         key="trigger"
-        ref={this.getWrapper}
+        ref={this.getWrapperRef}
         className={className}
         {...wrapperEventProps}
       >
@@ -160,7 +161,7 @@ class Popup extends Component {
       </WrapperComponent>,
       ReactDOM.createPortal(
         <View
-          ref={this.getPortal}
+          ref={this.getPortalRef}
           {...portalEventProps}
         >
           {!open ? null : renderOverlay(overlayProps)}

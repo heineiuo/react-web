@@ -50,6 +50,18 @@ declare class PromiseView extends React.Component<PromiseViewProps, any> {
 
 }
 
+declare class Popup extends React.Component<{
+  offsetTop?: number;
+  offsetLeft?: number;
+  onToggle?: () => {};
+  action?: string[];
+  renderOverlay: (overlayProps: {
+    closePopup: () => {},
+    getMountWrapper: () => {},
+    portalStyle: any
+  }) => React.ReactElement;
+}, any> { }
+
 declare class FilePicker extends React.Component<{
   multiple?: boolean | true;
   accept?: string;
