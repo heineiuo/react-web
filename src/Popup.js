@@ -7,7 +7,9 @@ import StyleSheet from './StyleSheet'
 const noop = () => { }
 
 /**
- * WARNING: React v16+ required
+ * @class Popup
+ * @description
+ * IMPORTANT: React v16+ required
  */
 class Popup extends Component {
 
@@ -58,7 +60,7 @@ class Popup extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.onDocumentClick, false)
+    document.addEventListener('click', this.handleDocumentClick, false)
     this.getMountWrapper().appendChild(this.el)
     this.updatePosition()
   }
@@ -68,7 +70,7 @@ class Popup extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.onDocumentClick, false)
+    document.removeEventListener('click', this.handleDocumentClick, false)
     this.el.remove()
   }
 
@@ -79,37 +81,37 @@ class Popup extends Component {
     return this.portal
   }
 
-  onDocumentClick = (e) => {
+  handleDocumentClick = (e) => {
     if (!(this.portal.contains(e.target) || this.wrapper.contains(e.target)) && this.state.open) {
-      this.onCloseOverlay(e)
+      this.handleCloseOverlay(e)
     }
   }
 
-  onClick = (e) => {
+  handleClick = (e) => {
     this.setState({ open: !this.state.open }, () => {
       this.props.onToggle({ open: this.state.open })
     })
     this.props.onClick(e)
   }
 
-  onMouseEnter = e => {
+  handleMouseEnter = e => {
     this.setState({ open: true }, () => {
       this.props.onToggle({ open: this.state.open })
     })
   }
 
-  onMouseLeaveWrapper = e => {
+  handleMouseLeaveWrapper = e => {
     if (!!this.portal && this.portal.contains(e.target)) {
       return false
     }
-    this.onCloseOverlay(e)
+    this.handleCloseOverlay(e)
   }
 
-  onMouseLeavePortal = e => {
+  handleMouseLeavePortal = e => {
     if (this.wrapper.contains(e.target)) {
       return false
     }
-    this.onCloseOverlay(e)
+    this.handleCloseOverlay(e)
   }
 
   closeOverlay = () => {
@@ -118,7 +120,7 @@ class Popup extends Component {
     })
   }
 
-  onCloseOverlay = e => {
+  handleCloseOverlay = e => {
     this.closeOverlay()
   }
 
@@ -137,12 +139,12 @@ class Popup extends Component {
     const wrapperEventProps = {}
     const portalEventProps = {}
     if (action.includes('click')) {
-      wrapperEventProps.onClick = this.onClick
+      wrapperEventProps.onClick = this.handleClick
     }
     if (action.includes('hover')) {
-      wrapperEventProps.onMouseEnter = this.onMouseEnter
-      wrapperEventProps.onMouseLeave = this.onMouseLeaveWrapper
-      portalEventProps.onMouseLeave = this.onMouseLeavePortal
+      wrapperEventProps.onMouseEnter = this.handleMouseEnter
+      wrapperEventProps.onMouseLeave = this.handleMouseLeaveWrapper
+      portalEventProps.onMouseLeave = this.handleMouseLeavePortal
     }
 
     const overlayProps = {

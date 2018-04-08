@@ -13,6 +13,8 @@ import Text from './Text'
 import Image from './Image'
 import Slider from './Slider'
 
+const Overlay = Popup
+
 export {
   View,
   Button,
@@ -24,6 +26,7 @@ export {
   Image,
   Menu,
   Popup,
+  Overlay,
   Slider,
   TouchableOpacity,
   PromiseView,
