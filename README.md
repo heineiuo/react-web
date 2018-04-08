@@ -201,3 +201,7 @@ AppRegistry.registerComponent('app', () => App, {
 
 
 
+
+## License
+
+[MIT](LICENSE)

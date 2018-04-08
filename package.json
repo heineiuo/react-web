@@ -30,6 +30,7 @@
     "*.d.ts",
     "!*.config.js",
     "umd/*.js",
+    "LICENSE",
     "README.md"
   ],
   "dependencies": {
