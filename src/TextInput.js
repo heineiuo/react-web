@@ -45,8 +45,12 @@ class TextInput extends Component {
     this.props.onBlur && this.props.onBlur(e)
   }
 
-  focus = (e) => {
+  focus = () => {
     this._input.focus()
+  }
+
+  blur = () => {
+    this._input.blur()
   }
 
   render() {
