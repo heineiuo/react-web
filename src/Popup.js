@@ -14,7 +14,6 @@ const noop = () => { }
 class Popup extends Component {
 
   static defaultProps = {
-    overlay: null,
     onClick: noop,
     onToggle: () => { },
     offsetTop: 0,
