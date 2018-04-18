@@ -26,15 +26,6 @@ class TextInput extends Component {
     dispatch: PropTypes.func
   }
 
-  renderWithAffix = (props) => {
-    return (
-      <View style={[styles.inputWrapper, styles.inputWrapper_withAffix]}>
-        <View>{this.props.affix}</View>
-        <input type="text" {...props.inputProps} />
-      </View>
-    )
-  }
-
   _onfocus = (e) => {
     this.setState({ isFocused: true })
     this.props.onFocus && this.props.onFocus(e)
@@ -51,6 +42,19 @@ class TextInput extends Component {
 
   blur = () => {
     this._input.blur()
+  }
+
+  getValue = () => {
+    return this._input.value
+  }
+
+  renderWithAffix = (props) => {
+    return (
+      <View style={[styles.inputWrapper, styles.inputWrapper_withAffix]}>
+        <View>{this.props.affix}</View>
+        <input type="text" ref={ref => this._input = ref} {...props.inputProps} />
+      </View>
+    )
   }
 
   render() {
