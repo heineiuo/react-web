@@ -27,12 +27,18 @@ class TextInput extends Component {
   }
 
   _onfocus = (e) => {
+    if (this.props.type === 'password') {
+      this._input.removeAttribute('readonly')
+    }
     this.setState({ isFocused: true })
     this.props.onFocus && this.props.onFocus(e)
   }
 
   _onblur = (e) => {
     this.setState({ isFocused: false })
+    if (this.props.type === 'password') {
+      this._input.setAttribute('readonly', true)
+    }
     this.props.onBlur && this.props.onBlur(e)
   }
 
@@ -74,6 +80,10 @@ class TextInput extends Component {
         onFocus: this._onfocus,
         onBlur: this._onblur
       })
+    }
+
+    if (type === 'password') {
+      inputProps.readOnly = true
     }
 
     return (
