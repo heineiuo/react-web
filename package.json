@@ -1,6 +1,6 @@
 {
   "name": "react-bucket",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",
@@ -41,8 +41,8 @@
     "is-base64": "0.0.4",
     "lodash": "^4.17.5",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-grid-system": "^3.1.2",
     "react-keyframes": "^0.2.3",
     "react-modal": "^3.1.11",
