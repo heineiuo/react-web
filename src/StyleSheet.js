@@ -1,5 +1,6 @@
 import Prefixer from 'inline-style-prefixer'
-import { isPlainObject, flatten } from './Utils'
+import isPlainObject from 'lodash/isPlainObject'
+import flatten from 'lodash/flatten'
 
 const prefixer = new Prefixer()
 

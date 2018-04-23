@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import View from './View'
@@ -93,20 +93,20 @@ class Popup extends Component {
     this.props.onClick(e)
   }
 
-  handleMouseEnter = e => {
+  handleMouseEnter = (e) => {
     this.setState({ open: true }, () => {
       this.props.onToggle({ open: this.state.open })
     })
   }
 
-  handleMouseLeaveWrapper = e => {
+  handleMouseLeaveWrapper = (e) => {
     if (!!this.portal && this.portal.contains(e.target)) {
       return false
     }
     this.handleCloseOverlay(e)
   }
 
-  handleMouseLeavePortal = e => {
+  handleMouseLeavePortal = (e) => {
     if (this.wrapper.contains(e.target)) {
       return false
     }
@@ -119,7 +119,7 @@ class Popup extends Component {
     })
   }
 
-  handleCloseOverlay = e => {
+  handleCloseOverlay = (e) => {
     this.closeOverlay()
   }
 
@@ -151,25 +151,27 @@ class Popup extends Component {
       getMountWrapper: this.getOverlayMountWrapper,
       portalStyle,
     }
-    return [
-      <WrapperComponent
-        key="trigger"
-        ref={this.getWrapperRef}
-        className={className}
-        {...wrapperEventProps}
-      >
-        {this.props.children}
-      </WrapperComponent>,
-      ReactDOM.createPortal(
-        <View
-          ref={this.getPortalRef}
-          {...portalEventProps}
+    
+    return (
+      <Fragment>
+        <WrapperComponent
+          ref={this.getWrapperRef}
+          className={className}
+          {...wrapperEventProps}
         >
-          {!open ? null : renderOverlay(overlayProps)}
-        </View>,
-        this.el
-      )
-    ]
+          {this.props.children}
+        </WrapperComponent>
+        {ReactDOM.createPortal(
+          <View
+            ref={this.getPortalRef}
+            {...portalEventProps}
+          >
+            {!open ? null : renderOverlay(overlayProps)}
+          </View>,
+          this.el
+        )}
+      </Fragment>
+    )
   }
 }
 
