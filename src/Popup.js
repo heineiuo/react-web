@@ -3,8 +3,14 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import View from './View'
 import StyleSheet from './StyleSheet'
+import pick from 'lodash/pick'
+import isEqual from 'lodash/isEqual'
 
 const noop = () => { }
+
+const pickRect = (obj) => pick(obj, ['top', 'left', 'witdh', 'height'])
+
+const id = 'ReactBucketPopup'
 
 /**
  * @class Popup
@@ -25,6 +31,10 @@ class Popup extends Component {
   }
 
   state = {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
     open: false
   }
 
@@ -34,20 +44,15 @@ class Popup extends Component {
 
 
   updatePosition = () => {
-    const rect = this.wrapper.getBoundingClientRect()
-    if (rect.left != this.state.left || rect.top != this.state.top) {
-      this.setState({
-        top: rect.top,
-        left: rect.left,
-        width: rect.width,
-        height: rect.height,
-      })
+    const rect = pickRect(this.wrapper.getBoundingClientRect())
+    const prevState = pickRect(this.state)
+    if (!isEqual(prevState, rect)) {
+      this.setState(rect)
     }
   }
 
   getMountWrapper = () => {
     if (this._mountWrapper) return this._mountWrapper
-    const id = '__popup'
     this._mountWrapper = document.getElementById(id)
     if (!this._mountWrapper) {
       this._mountWrapper = document.createElement('div')
@@ -151,7 +156,7 @@ class Popup extends Component {
       getMountWrapper: this.getOverlayMountWrapper,
       portalStyle,
     }
-    
+
     return (
       <Fragment>
         <WrapperComponent

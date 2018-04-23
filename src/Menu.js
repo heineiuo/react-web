@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import View from './View'
 import StyleSheet from './StyleSheet'
@@ -7,7 +7,9 @@ class Menu extends Component {
 
   static defaultProps = {
     isRoot: true,
+    getKey: (item) => item.key,
     style: {},
+    itemStyle: {},
     arrowStyle: {},
     top: 0,
     left: 0,
@@ -24,6 +26,7 @@ class Menu extends Component {
   }
 
   state = {
+    visible: false,
     refTop: 0,
     updateTimes: 0,
     visibleStyle: {}
@@ -60,12 +63,11 @@ class Menu extends Component {
     // this.checkPosition()
   }
 
+  getRef = ref => this.refRoot = ReactDOM.findDOMNode(ref)
 
   checkPosition = () => {
     if (!this.state.visible && !!this.refRoot) {
-      const refRootNode = ReactDOM.findDOMNode(this.refRoot)
-      const { width, height, left, top } = refRootNode.getBoundingClientRect()
-      // console.log(refRootNode, rect)
+      const { width, height, left, top } = this.refRoot.getBoundingClientRect()
       const visibleStyle = {
         width,
         height,
@@ -126,6 +128,7 @@ class Menu extends Component {
 
   render() {
     const {
+      getKey,
       isRoot,
       isBranch,
       renderItem,
@@ -133,6 +136,7 @@ class Menu extends Component {
       parentTop = 0,
       parentRight = 0,
       style,
+      itemStyle,
       onClickItem
     } = this.props
     const Arrow = this.renderArrow
@@ -147,17 +151,17 @@ class Menu extends Component {
 
     const mergedVisibleStyle = {
       visibility: visible ? 'visible' : 'hidden',
-      left: visible ? visibleStyle.left : parentRight,
-      top: visible ? visibleStyle.top : parentTop,
+      left: (!isRoot && visible) ? visibleStyle.left : parentRight,
+      top: (!isRoot && visible) ? visibleStyle.top : parentTop,
     }
 
     return ReactDOM.createPortal(
       <View
-        ref={ref => this.refRoot = ref}
-        // data-id={`m${this.props.id}`}
-        // data-parentright={this.props.parentRight}
-        // data-parenttop={this.props.parentTop}
-        // data-parentwidth={this.props.parentWidth}
+        ref={this.getRef}
+        data-id={`m${this.props.id}`}
+        data-parent-right={this.props.parentRight}
+        data-parent-top={this.props.parentTop}
+        data-parent-width={this.props.parentWidth}
         style={[styles.menu, style, mergedVisibleStyle]}
       >
         {data.map((item, index) => {
@@ -166,33 +170,33 @@ class Menu extends Component {
           const hasChildren = item.children && item.children.length > 0
           return (
             <View
-              key={item.key}
+              key={getKey(item)}
               style={[styles.menuItem, isHovered && (showHoverStyle || hasChildren) && styles.menuItem[":hover"]]}
               ref={(ref) => this[refName] = ref}
               onMouseEnter={(e) => this.onMouseEnter(e, refName)}
               onMouseLeave={(e) => this.onMouseLeave(e, refName)}
             >
-              <View>
-                <View onClick={(e) => onClickItem(e, item)} style={styles.menuItemWrapper}>
+              <Fragment>
+                <View onClick={(e) => onClickItem(e, item)} style={[styles.menuItemWrapper, itemStyle]}>
                   {renderItem({ item })}
                   {hasChildren ? <Arrow fill={isHovered ? '#FFF' : '#666'} /> : null}
                 </View>
                 {(hasChildren && isHovered) ?
                   <Menu
                     onClickItem={onClickItem}
-                    key={item.key}
+                    getKey={getKey}
                     id={item.key}
                     isRoot={false}
                     getMountWrapper={this.props.getMountWrapper}
                     parentWidth={visibleStyle.width}
                     parentTop={refTop - 4}
-                    parentRight={visibleStyle.left + visibleStyle.width}
+                    parentRight={mergedVisibleStyle.left + visibleStyle.width}
                     renderItem={renderItem}
                     data={item.children}
                   /> :
                   null
                 }
-              </View>
+              </Fragment>
             </View>
           )
         })}
