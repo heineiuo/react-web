@@ -56,6 +56,7 @@ class TouchableOpacity extends Component {
     })
 
     props.style = StyleSheet.assign([{
+      cursor: 'pointer',
       transition: 'opacity .15s ease'
     }, this.props.style])
 
