@@ -31,7 +31,7 @@
     "!*.config.js",
     "umd/*.js",
     "LICENSE",
-    "README.md"
+    "*.md"
   ],
   "dependencies": {
     "attr-accept": "^1.1.0",
