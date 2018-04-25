@@ -6,11 +6,15 @@ import { createHashHistory, createBrowserHistory, createMemoryHistory } from 'hi
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { routerReducer, routerMiddleware, ConnectedRouter } from 'react-router-redux'
 import ReduxThunk from 'redux-thunk'
+import SystemJS from 'systemjs'
 import { warning } from './Utils'
 
 
 const AppRegistry = {
   registerComponent: (appKey, componentProvider, config) => {
+    if (config.systemConfig) {
+      SystemJS.config(config.systemConfig)
+    }
     const App = componentProvider()
     const { historyType } = App
     const AppWithRouter = withRouter(App)
