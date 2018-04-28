@@ -9,16 +9,14 @@ import * as ReactRedux from 'react-redux'
 import PropTypes from 'prop-types'
 import * as history from 'history'
 import ReduxThunk from 'redux-thunk'
-import * as Utils from './Utils'
-import StyleSheet from './StyleSheet'
-import ActivityIndicator from './ActivityIndicator'
+import { Adopt, adopt } from 'react-adopt'
+import * as ReactMotion from 'react-motion'
+import * as Keyframes from 'react-keyframes'
 
 /**
  * Motion
  */
-import * as ReactMotion from 'react-motion'
 const { Motion, spring } = ReactMotion
-export { Motion, spring }
 
 /**
  * redux
@@ -26,37 +24,10 @@ export { Motion, spring }
 const { connect } = ReactRedux
 const { bindActionCreators } = Redux
 
+/**
+ * Router
+ */
 const { Route, Link, Switch: RouteSwitch } = ReactRouter
-
-
-/**
- * Integration Components
- */
-export * from './Components'
-
-/**
- * AppRegistry
- */
-import AppRegistry from './AppRegistry'
-
-export {
-  ActivityIndicator,
-  AppRegistry,
-  React,
-  ReactDOM,
-  ReactRouter,
-  ReactRedux,
-  ReactRouterRedux,
-  Component,
-  Modal,
-  Redux,
-  StyleSheet,
-  PropTypes,
-  connect,
-  Utils,
-  bindActionCreators,
-}
-
 
 /**
  * System registry
@@ -86,3 +57,32 @@ systemRegisties.forEach(item => {
     System.newModule(item.default)
   )
 })
+
+
+/**
+ * Export Integration Components
+ */
+export * from './Components'
+
+/**
+ * Export Third-party Components
+ */
+export {
+  Adopt,
+  React,
+  ReactDOM,
+  ReactRouter,
+  ReactRedux,
+  ReactRouterRedux,
+  PropTypes,
+  Component,
+  Modal,
+  Motion,
+  Redux,
+  connect,
+  adopt,
+  Keyframes,
+  bindActionCreators,
+  spring,
+}
+

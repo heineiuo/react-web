@@ -1,3 +1,6 @@
+/**
+ * @todo fetch polyfill will be removed in future
+ */
 import 'whatwg-fetch'
 
 export * from './Bucket'

@@ -12,10 +12,17 @@ import PromiseView from './PromiseView'
 import Text from './Text'
 import Image from './Image'
 import Slider from './Slider'
+import ActivityIndicator from './ActivityIndicator'
+import AppRegistry from './AppRegistry'
+import * as Utils from './Utils'
+import StyleSheet from './StyleSheet'
 
 const Overlay = Popup
+const Style = (props) => <style {...props}>{props.children}</style>
 
 export {
+  ActivityIndicator,
+  AppRegistry,
   View,
   Button,
   Box,
@@ -30,7 +37,9 @@ export {
   Slider,
   TouchableOpacity,
   PromiseView,
+  Utils,
+  Style,
+  StyleSheet,
 }
 
 
-export const Style = (props) => <style {...props}>{props.children}</style>
