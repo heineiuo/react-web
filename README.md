@@ -15,6 +15,12 @@ React全家桶
 <script src="/your/app.js" />
 ```
 
+#### NPM/Development
+
+```bash
+→ npm i react-bucket -D
+```
+
 ## Document
 
 ### Vendors
@@ -23,19 +29,19 @@ Vendor | Version  | Alias | Link | Description
 ------------------|---------|-------|------|------------
 react             |  16.3.2 | React | [react](https://github.com/facebook/react) | A UI Framework
 react-dom| 16.3.2 | ReactDOM | [react-dom](https://github.com/facebook/react) | DOM adaptor for react
-prop-types        | 15.6.0   | PropTypes
-react-adopt       | 0.4.1    | ReactAdopt
-react-grid-system | 3.1.2     | ReactGridSystem
-react-keyframes   | 0.2.3     | ReactKeyframes
-react-modal       | 3.1.11     | ReactModal
-react-motion      | 0.5.2     | ReactMotion
-react-redux       | 5.0.6     | 
-react-router-dom  | 4.2.2     | ReactRouterDOM
-react-router-redux|5.0.0-alpha.9 | ReactRouterRedux
-redux             | 3.7.2    | Redux
-redux-thunk       | 2.2.0    |
-systemjs          | 0.20.19    | SystemJS
-warning           | 3.0.0      |
+prop-types        | 15.6.0   | PropTypes | [prop-types](https://github.com/facebook/prop-types) | Runtime type checking for React props and similar objects
+react-adopt       | 0.4.1    | ReactAdopt | [react-adopt](https://github.com/pedronauck/react-adopt) | Compose render props components
+react-grid-system | 3.1.2     | ReactGridSystem | [react-grid-system](https://github.com/JSxMachina/react-grid-system) | Bootstrap-like responsive grid system
+react-keyframes   | 0.2.3     | ReactKeyframes | [react-keyframes](https://github.com/zeit/react-keyframes) | Create frame-based animations
+react-modal       | 3.1.11     | ReactModal | [react-modal](https://github.com/reactjs/react-modal) |  Accessible modal dialog component
+react-motion      | 0.5.2     | ReactMotion | [react-motion](https://github.com/chenglou/react-motion) | A spring that solves your animation problems 
+react-redux       | 5.0.6     | ReactRedux | [react-redux](https://github.com/reactjs/react-redux) | Official React bindings for Redux
+react-router-dom  | 4.2.2     | ReactRouterDOM | [react-router-dom](https://github.com/ReactTraining/react-router) | Declarative routing for React
+react-router-redux|5.0.0-alpha.9 | ReactRouterRedux | [react-router-redux](https://github.com/ReactTraining/react-router) | Keep your state in sync with your router 
+redux             | 3.7.2    | Redux | [redux](https://github.com/reactjs/redux) | Predictable state container for JavaScript apps
+redux-thunk       | 2.2.0    | (not exported) | 
+systemjs          | 0.20.19    | SystemJS | [systemjs](https://github.com/systemjs/systemjs) | Dynamic ES module loader
+warning           | 3.0.0      | (not exported) | 
 
 
 
