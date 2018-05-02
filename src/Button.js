@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import StyleSheet from './StyleSheet'
-import { omit } from './Utils'
+import omit from 'lodash/omit'
 import View from './View'
 import TouchableOpacity from './TouchableOpacity'
 

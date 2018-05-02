@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { throttle } from './Utils'
+import throttle from 'lodash/throttle'
 
 class ScrollView extends Component {
 

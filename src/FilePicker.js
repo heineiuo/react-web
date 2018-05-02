@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { attrAccept } from './Utils'
+import attrAccept from './attr-accept'
 
 /**
  * 仅负责选择本地文件，文件的处理和上传交给其他组件完成

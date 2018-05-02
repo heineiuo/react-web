@@ -7,7 +7,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { routerReducer, routerMiddleware, ConnectedRouter } from 'react-router-redux'
 import ReduxThunk from 'redux-thunk'
 import SystemJS from 'systemjs'
-import { warning } from './Utils'
+import warning from 'warning'
 
 
 const AppRegistry = {
