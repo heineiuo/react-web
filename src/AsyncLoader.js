@@ -30,13 +30,13 @@ class AsyncLoader extends Component {
     error: null
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     this.load(this.props)
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    if (nextProps.loadKey !== this.props.loadKey) {
-      this.load(nextProps)
+  componentDidUpdate = (prevProps) => {
+    if (this.props.loadKey !== prevProps.loadKey) {
+      this.load(this.props)
     }
   }
 

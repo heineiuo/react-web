@@ -31,14 +31,14 @@ class Popup extends Component {
     action: ['click']
   }
 
-  state = {
-    open: false
-  }
-
-  componentWillMount = () => {
+  constructor(props) {
+    super(props)
     this.el = document.createElement('div')
   }
 
+  state = {
+    open: false
+  }
 
   updatePosition = () => {
     const rect = pickRect(this.wrapper.getBoundingClientRect())
@@ -73,6 +73,7 @@ class Popup extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('click', this.handleDocumentClick, false)
+    document.removeEventListener('mousemove', this.handleDocumentMouseMove, false)
     this.el.remove()
   }
 

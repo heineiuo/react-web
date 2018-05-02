@@ -18,14 +18,14 @@ class PromiseView extends Component {
     onStateChange: new Function()
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    if (nextProps.promise != this.props.promise) {
-      this.initListener(nextProps)
-    }
+  componentDidMount = () => {
+    this.initListener(this.props)
   }
 
-  componentWillMount = () => {
-    this.initListener(this.props)
+  componentDidUpdate = (prevProps) => {
+    if (this.props.promise != prevProps.promise) {
+      this.initListener(this.props)
+    }
   }
 
   initListener = (props) => {

@@ -25,6 +25,12 @@ class Menu extends Component {
     }
   }
 
+  constructor(props) {
+    super(props)
+    this._mountPoint = document.createElement('div')
+    this.getMountWrapper().appendChild(this._mountPoint)
+  }
+
   state = {
     visible: false,
     refTop: 0,
@@ -46,17 +52,12 @@ class Menu extends Component {
     return this._mountWrapper
   }
 
-  componentWillMount = () => {
-    this._mountPoint = document.createElement('div')
-    this.getMountWrapper().appendChild(this._mountPoint)
+  componentDidMount = () => {
+    this.checkPosition()
   }
 
   componentWillUnmount = () => {
     this._mountPoint.remove()
-  }
-
-  componentDidMount = () => {
-    this.checkPosition()
   }
 
   componentDidUpdate = () => {
