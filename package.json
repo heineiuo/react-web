@@ -1,6 +1,6 @@
 {
   "name": "react-bucket",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",
@@ -58,10 +58,6 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.15",
-    "@storybook/addon-links": "^3.3.15",
-    "@storybook/addons": "^3.3.15",
-    "@storybook/react": "^3.3.15",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
