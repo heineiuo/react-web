@@ -8,12 +8,13 @@ import isEqual from 'lodash/isEqual'
 
 const noop = () => { }
 
-const pickRect = (obj) => pick(obj, ['top', 'left', 'witdh', 'height'])
+const pickRect = (obj) => pick(obj, ['top', 'left', 'width', 'height'])
 
 const id = 'ReactBucketPopup'
 
 /**
- * @class Popup
+ * @class Popup 
+ * @summary 弹出层
  * @description
  * IMPORTANT: React v16+ required
  */
@@ -31,10 +32,6 @@ class Popup extends Component {
   }
 
   state = {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
     open: false
   }
 
@@ -65,6 +62,7 @@ class Popup extends Component {
 
   componentDidMount() {
     document.addEventListener('click', this.handleDocumentClick, false)
+    document.addEventListener('mousemove', this.handleDocumentMouseMove, false)
     this.getMountWrapper().appendChild(this.el)
     this.updatePosition()
   }
@@ -104,18 +102,23 @@ class Popup extends Component {
     })
   }
 
-  handleMouseLeaveWrapper = (e) => {
-    if (!!this.portal && this.portal.contains(e.target)) {
-      return false
-    }
-    this.handleCloseOverlay(e)
-  }
+  handleDocumentMouseMove = (e) => {
+    if (!this.props.action.includes('hover')) return false
+    const isOutWrapper = (() => {
+      if (!this.wrapper) return true
+      if (this.wrapper.contains(e.target)) return false
+      return true
+    })()
 
-  handleMouseLeavePortal = (e) => {
-    if (this.wrapper.contains(e.target)) {
-      return false
+    const isOutPortal = (() => {
+      if (!this.portal) return true
+      if (this.portal.contains(e.target)) return false
+      return true
+    })()
+
+    if (isOutWrapper && isOutPortal) {
+      if (this.state.open) this.handleCloseOverlay(e)
     }
-    this.handleCloseOverlay(e)
   }
 
   closeOverlay = () => {
@@ -133,13 +136,6 @@ class Popup extends Component {
     const { open } = this.state
     const WrapperComponent = this.props.component || View
 
-    const portalStyle = !open ? { display: 'none' } : {
-      position: 'absolute',
-      width: this.state.width,
-      height: this.state.height,
-      top: this.state.top + this.state.height + this.props.offsetTop,
-      left: this.state.left + this.props.offsetLeft,
-    }
     const wrapperEventProps = {}
     const portalEventProps = {}
     if (action.includes('click')) {
@@ -147,14 +143,20 @@ class Popup extends Component {
     }
     if (action.includes('hover')) {
       wrapperEventProps.onMouseEnter = this.handleMouseEnter
-      wrapperEventProps.onMouseLeave = this.handleMouseLeaveWrapper
-      portalEventProps.onMouseLeave = this.handleMouseLeavePortal
+      // wrapperEventProps.onMouseLeave = this.handleMouseOutWrapper
+      // portalEventProps.onMouseLeave = this.handleMouseOutPortal
     }
 
     const overlayProps = {
       closePopup: this.closeOverlay,
       getMountWrapper: this.getOverlayMountWrapper,
-      portalStyle,
+      portalStyle: !open ? { display: 'none' } : {
+        position: 'absolute',
+        width: this.state.width,
+        height: this.state.height,
+        top: this.state.top + this.state.height + this.props.offsetTop,
+        left: this.state.left + this.props.offsetLeft,
+      }
     }
 
     return (
