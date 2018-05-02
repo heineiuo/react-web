@@ -6,6 +6,13 @@
   </summary>
 </details>
 
+
+## 0.0.11 (May 2, 2018)
+
+### Components
+
+* Fix a bug in `<Popup/>` 
+
 ## 0.0.10 (Apr 23, 2018)
 
 ### Vendors
