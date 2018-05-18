@@ -8,5 +8,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "inline-style-prefixer": "^4.0.2"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.10"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.10"
+  }
 }

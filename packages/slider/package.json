@@ -5,5 +5,9 @@
   "scripts": {
     "prepublish": "babel src -d dist"
   },
+  "files":[
+    "dist",
+    "index.js"
+  ],
   "license": "MIT"
 }
