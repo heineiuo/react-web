@@ -1,18 +1,11 @@
 {
-  "name": "react-bucket",
+  "name": "react-web",
   "version": "0.0.11",
   "private": true,
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "//build:clear": "rm -rf ./*.js",
-    "//build": "babel src -d ./",
-    "//build:umd-dev": "cd scripts && cross-env NODE_ENV=development webpack",
-    "//build:umd": "cd scripts && cross-env NODE_ENV=production webpack",
-    "//prepublish": "npm run build:clear && npm run build && npm run build:umd-dev && npm run build:umd",
-    "//postpublish": "npm run build:clear",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -26,14 +19,6 @@
     "url": "https://github.com/heineiuo/react-bucket/issues"
   },
   "homepage": "https://github.com/heineiuo/react-bucket#readme",
-  "files": [
-    "*.js",
-    "*.d.ts",
-    "!*.config.js",
-    "umd/*.js",
-    "LICENSE",
-    "*.md"
-  ],
   "workspaces": [
     "packages/*"
   ]
