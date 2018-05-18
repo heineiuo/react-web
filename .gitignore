@@ -9,3 +9,4 @@ umd/*.js
 storybook-static
 *.github.io
 dist
+*.log*
