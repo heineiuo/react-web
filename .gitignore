@@ -7,5 +7,5 @@ node_modules
 stats.html
 umd/*.js
 storybook-static
-react-bucket.github.io
+*.github.io
 dist
