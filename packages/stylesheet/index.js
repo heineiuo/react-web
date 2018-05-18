@@ -1,1 +1,3 @@
+'use strict';
+
 module.exports = module.exports.default = require('./dist/StyleSheet').default
