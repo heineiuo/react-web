@@ -2,17 +2,19 @@
   "name": "@react-web/vendor",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/vendor.production.js",
   "scripts": {
     "prepublish": "babel src -d dist"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
-    "!src",
-    "*.js"
+    "dist"
   ],
+  "devDependencies": {
+    "@react-web/webpack": "*"
+  },
   "dependencies": {
     "attr-accept": "^1.1.0",
     "babel-runtime": "^6.26.0",

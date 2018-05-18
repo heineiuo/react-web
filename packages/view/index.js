@@ -1,2 +1,2 @@
 'use strict';
-module.exports = module.exports.default = require('./View');
+module.exports = module.exports.default = require('./dist/View');

@@ -1,5 +1,5 @@
 
-const dataURLToBlob = (dataURL) => {
+export default function dataURLToBlob(dataURL) {
   const BASE64_MARKER = ';base64,'
 
   if (dataURL.indexOf(BASE64_MARKER) == -1) {

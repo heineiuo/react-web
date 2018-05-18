@@ -1,6 +1,6 @@
 // https://github.com/okonet/attr-accept
 
-export default function (file, acceptedFiles) {
+export default function attrAccept(file, acceptedFiles) {
     if (file && acceptedFiles) {
         const acceptedFilesArray = (Array.isArray(acceptedFiles) ?
             acceptedFiles :
