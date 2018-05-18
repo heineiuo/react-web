@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { View, Button, TextInput, Menu } from '../index.js';
+import { View, Button, TextInput, Menu } from '@react-web/components';
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => {
