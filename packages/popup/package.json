@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "scripts": {
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/view": "*",
-    "@react-web/stylesheet": "*"
+    "@react-web/stylesheet": "*",
+    "@react-web/view": "*"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.10"
   }
 }
