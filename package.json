@@ -21,5 +21,8 @@
   "homepage": "https://github.com/heineiuo/react-bucket#readme",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  }
 }
