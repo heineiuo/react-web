@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import View from './View'
-import StyleSheet from './StyleSheet'
+import View from '@react-web/view'
+import StyleSheet from '@react-web/stylesheet'
 import pick from 'lodash/pick'
 import isEqual from 'lodash/isEqual'
 

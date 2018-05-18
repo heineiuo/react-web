@@ -1,0 +1,12 @@
+{
+  "name": "@react-web/stylesheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

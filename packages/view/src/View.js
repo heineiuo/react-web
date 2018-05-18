@@ -1,6 +1,6 @@
 import React, { Component, createElement } from 'react'
 import omit from 'lodash/omit'
-import StyleSheet from './StyleSheet'
+import StyleSheet from '@react-web/stylesheet'
 
 class View extends Component {
 

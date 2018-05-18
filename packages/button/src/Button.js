@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import StyleSheet from './StyleSheet'
+import StyleSheet from '@react-web/stylesheet'
 import omit from 'lodash/omit'
-import View from './View'
-import TouchableOpacity from './TouchableOpacity'
+import View from '@react-web/view'
+import { TouchableOpacity } from '@react-web/touchable'
 
 class Button extends Component {
 

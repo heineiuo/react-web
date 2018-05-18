@@ -1,8 +1,8 @@
 // @unstable
 
 import React, { Component } from 'react'
-import View from './View'
-import StyleSheet from './StyleSheet'
+import View from '@react-web/view'
+import StyleSheet from '@react-web/stylesheet'
 
 class TriangleArrow extends Component {
   static defaultProps = {

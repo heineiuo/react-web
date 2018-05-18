@@ -1,0 +1,9 @@
+{
+  "name": "@react-web/slider",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "license": "MIT"
+}

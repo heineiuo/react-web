@@ -1,0 +1,13 @@
+{
+  "name": "@react-web/touchable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "dependencies": {
+    "@react-web/stylesheet": "*",
+    "@react-web/view": "*"
+  }
+}

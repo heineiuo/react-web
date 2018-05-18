@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "babel src -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "files": [
+    "!src",
+    "*.js"
+  ],
   "dependencies": {
     "attr-accept": "^1.1.0",
     "babel-runtime": "^6.26.0",

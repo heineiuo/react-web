@@ -1,0 +1,12 @@
+{
+  "name": "@react-web/scroll-view",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "peerDependencies": {
+    "lodash": "*"
+  },
+  "license": "MIT"
+}

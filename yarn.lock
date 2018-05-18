@@ -2086,7 +2086,7 @@ is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
 
-is-base64@0.0.4:
+is-base64@0.0.4, is-base64@^0.0.4:
   version "0.0.4"
   resolved "https://registry.npmjs.org/is-base64/-/is-base64-0.0.4.tgz#6ef33c01f4870d1306ea38857bd59adf3e3f543f"
 
@@ -2964,7 +2964,7 @@ react-grid-system@^3.1.2:
     lodash "^4.17.5"
     prop-types "^15.6.1"
 
-react-keyframes@^0.2.3:
+react-keyframes@*, react-keyframes@^0.2.3:
   version "0.2.3"
   resolved "https://registry.npmjs.org/react-keyframes/-/react-keyframes-0.2.3.tgz#1dca7e5684b36718f8080c7cf9bf24ce750b1b38"
 
@@ -3579,7 +3579,7 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-ua-parser-js@^0.7.9:
+ua-parser-js@^0.7.18, ua-parser-js@^0.7.9:
   version "0.7.18"
   resolved "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.18.tgz#a7bfd92f56edfb117083b69e31d2aa8882d4b1ed"
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import omit from 'lodash/omit'
-import StyleSheet from './StyleSheet'
-import View from './View'
+import StyleSheet from '@react-web/stylesheet'
+import View from '@react-web/view'
 
 class TextInput extends Component {
 

@@ -1,0 +1,9 @@
+{
+  "name": "@react-web/platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ua-parser-js": "^0.7.18"
+  }
+}

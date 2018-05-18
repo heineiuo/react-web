@@ -8,3 +8,4 @@ stats.html
 umd/*.js
 storybook-static
 react-bucket.github.io
+dist

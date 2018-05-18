@@ -1,0 +1,28 @@
+{
+  "name": "@react-web/components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "dependencies": {
+    "@react-web/view": "*",
+    "@react-web/stylesheet": "*",
+    "@react-web/text": "*",
+    "@react-web/text-input": "*",
+    "@react-web/promise-view": "*",
+    "@react-web/app-registry": "*",
+    "@react-web/activity-indicator": "*",
+    "@react-web/button": "*",
+    "@react-web/utils": "*",
+    "@react-web/slider": "*",
+    "@react-web/image": "*",
+    "@react-web/popup": "*",
+    "@react-web/touchable": "*",
+    "@react-web/menu": "*",
+    "@react-web/box": "*",
+    "@react-web/file-picker": "*",
+    "@react-web/scroll-view": "*"
+  }
+}

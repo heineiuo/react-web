@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import StyleSheet from './StyleSheet'
-import PromiseView from './PromiseView'
-import View from './View'
-import ActivityIndicator from './ActivityIndicator'
+import StyleSheet from '@react-web/stylesheet'
+import PromiseView from '@react-web/promise-view'
+import View from '@react-web/view'
+import ActivityIndicator from '@react-web/activity-indicator'
 import isBase64 from 'is-base64'
-// import isEqual from 'lodash/isEqual'
 
 const cache = {}
 

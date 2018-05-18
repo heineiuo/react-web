@@ -1,0 +1,14 @@
+{
+  "name": "@react-web/box",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "peerDependencies": {
+    "@react-web/vendor": "*",
+    "@react-web/stylesheet": "*",
+    "@react-web/view": "*"
+  }
+}

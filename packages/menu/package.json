@@ -1,0 +1,13 @@
+{
+  "name": "@react-web/menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babrl src -d dist"
+  },
+  "dependencies": {
+    "@react-web/view": "*",
+    "@react-web/stylesheet": "*"
+  }
+}

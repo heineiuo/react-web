@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import View from './View'
-import StyleSheet from './StyleSheet'
+import View from '@react-web/view'
+import StyleSheet from '@react-web/stylesheet'
 
 class TouchableOpacity extends Component {
 

@@ -1,0 +1,12 @@
+{
+  "name": "@react-web/image",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "is-base64": "^0.0.4",
+    "@react-web/view": "*",
+    "@react-web/promise-view": "*",
+    "@react-web/activity-indicator": "*"
+  }
+}

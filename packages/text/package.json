@@ -1,0 +1,9 @@
+{
+  "name": "@react-web/text",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*"
+  }
+}

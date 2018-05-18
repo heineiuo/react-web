@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import StyleSheet from './StyleSheet'
+import StyleSheet from '@react-web/stylesheet'
 import PropTypes from 'prop-types'
-import View from './View'
+import View from '@react-web/view'
 
 class Box extends Component {
 

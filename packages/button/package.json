@@ -1,0 +1,15 @@
+{
+  "name": "@react-web/button",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "dependencies": {
+    "@react-web/vendor": "*",
+    "@react-web/view": "*",
+    "@react-web/stylesheet": "*",
+    "@react-web/touchable": "*"
+  }
+}
