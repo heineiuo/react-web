@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "scripts": {
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/vendor": "*",
     "@react-web/view": "*",
     "@react-web/stylesheet": "*",
     "@react-web/touchable": "*"
+  },
+  "peerDependencies": {
+    "@react-web/vendor": "*"
   }
 }
