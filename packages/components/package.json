@@ -1,6 +1,6 @@
 {
   "name": "@react-web/components",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -11,23 +11,23 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/grid": "*",
-    "@react-web/view": "*",
-    "@react-web/stylesheet": "*",
-    "@react-web/text": "*",
-    "@react-web/text-input": "*",
-    "@react-web/promise-view": "*",
-    "@react-web/app-registry": "*",
-    "@react-web/activity-indicator": "*",
-    "@react-web/button": "*",
-    "@react-web/utils": "*",
-    "@react-web/slider": "*",
-    "@react-web/image": "*",
-    "@react-web/popup": "*",
-    "@react-web/touchable": "*",
-    "@react-web/menu": "*",
-    "@react-web/box": "*",
-    "@react-web/file-picker": "*",
-    "@react-web/scroll-view": "*"
+    "@react-web/activity-indicator": "^0.1.0",
+    "@react-web/app-registry": "^0.1.0",
+    "@react-web/box": "^0.1.0",
+    "@react-web/button": "^0.1.0",
+    "@react-web/file-picker": "^0.1.0",
+    "@react-web/grid": "^0.1.0",
+    "@react-web/image": "^0.1.0",
+    "@react-web/menu": "^0.1.0",
+    "@react-web/popup": "^0.1.0",
+    "@react-web/promise-view": "^0.1.0",
+    "@react-web/scroll-view": "^0.1.0",
+    "@react-web/slider": "^0.1.0",
+    "@react-web/stylesheet": "^0.1.0",
+    "@react-web/text": "^0.1.0",
+    "@react-web/text-input": "^0.1.0",
+    "@react-web/touchable": "^0.1.0",
+    "@react-web/utils": "^0.1.0",
+    "@react-web/view": "^0.1.0"
   }
 }

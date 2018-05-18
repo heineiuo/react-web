@@ -1,6 +1,6 @@
 {
   "name": "@react-web/vendor",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "browser": "dist/vendor.production.js",
@@ -16,7 +16,7 @@
     "index.js"
   ],
   "devDependencies": {
-    "@react-web/webpack": "*"
+    "@react-web/webpack": "^0.1.0"
   },
   "dependencies": {
     "attr-accept": "^1.1.0",

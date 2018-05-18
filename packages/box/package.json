@@ -1,6 +1,6 @@
 {
   "name": "@react-web/box",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,8 +11,8 @@
     "index.js"
   ],
   "peerDependencies": {
-    "@react-web/vendor": "*",
     "@react-web/stylesheet": "*",
+    "@react-web/vendor": "*",
     "@react-web/view": "*"
   }
 }

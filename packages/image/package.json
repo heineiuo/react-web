@@ -1,6 +1,6 @@
 {
   "name": "@react-web/image",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -11,9 +11,9 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "is-base64": "^0.0.4",
-    "@react-web/view": "*",
-    "@react-web/promise-view": "*",
-    "@react-web/activity-indicator": "*"
+    "@react-web/activity-indicator": "^0.1.0",
+    "@react-web/promise-view": "^0.1.0",
+    "@react-web/view": "^0.1.0",
+    "is-base64": "^0.0.4"
   }
 }

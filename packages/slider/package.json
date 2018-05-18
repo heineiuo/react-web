@@ -1,11 +1,11 @@
 {
   "name": "@react-web/slider",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "prepublish": "babel src -d dist"
   },
-  "files":[
+  "files": [
     "dist",
     "index.js"
   ],
