@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "prepublish": "babrl src -d dist"
+    "prepublish": "babel src -d dist"
   },
   "dependencies": {
     "@react-web/view": "*",
