@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "dependencies": {
     "@react-web/utils": "*"
   }
