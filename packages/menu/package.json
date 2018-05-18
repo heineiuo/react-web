@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "scripts": {
     "prepublish": "babrl src -d dist"
   },
