@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import View from './View'
-import StyleSheet from './StyleSheet'
+import View from '@react-web/view'
+import StyleSheet from '@react-web/stylesheet'
 
 class Menu extends Component {
 

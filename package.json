@@ -1,6 +1,7 @@
 {
   "name": "react-bucket",
   "version": "0.0.11",
+  "private": true,
   "description": "React全家桶:splash:",
   "main": "index.js",
   "browser": "umd/react-bucket.production.js",
@@ -32,6 +33,9 @@
     "umd/*.js",
     "LICENSE",
     "*.md"
+  ],
+  "workspaces": [
+    "packages/*"
   ],
   "dependencies": {
     "attr-accept": "^1.1.0",

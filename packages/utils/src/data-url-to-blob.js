@@ -1,9 +1,3 @@
-import warning from 'warning'
-import attrAccept from './attr-accept'
-import omit from 'lodash/omit'
-import isPlainObject from 'lodash/isPlainObject'
-import flatten from 'lodash/flatten'
-import throttle from 'lodash/throttle'
 
 const dataURLToBlob = (dataURL) => {
   const BASE64_MARKER = ';base64,'
@@ -26,15 +20,4 @@ const dataURLToBlob = (dataURL) => {
     uInt8Array[i] = raw.charCodeAt(i)
   }
   return new Blob([uInt8Array], { type: contentType })
-}
-
-
-export {
-  dataURLToBlob,
-  warning,
-  attrAccept,
-  omit,
-  isPlainObject,
-  flatten,
-  throttle,
 }

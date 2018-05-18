@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import StyleSheet from './StyleSheet'
-import { Keyframes, Frame } from './Keyframes'
-import View from './View'
+import StyleSheet from '@react-web/stylesheet'
+import { Keyframes, Frame } from 'react-keyframes'
+import View from '@react-web/view'
 
 const bars = Array.from({ length: 12 }, v => 0)
 
