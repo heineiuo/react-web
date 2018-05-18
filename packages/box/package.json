@@ -6,6 +6,10 @@
   "scripts": {
     "prepublish": "babel src -d dist"
   },
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "peerDependencies": {
     "@react-web/vendor": "*",
     "@react-web/stylesheet": "*",
