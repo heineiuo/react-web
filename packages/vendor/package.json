@@ -14,7 +14,8 @@
   "license": "MIT",
   "files": [
     "dist",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "devDependencies": {
     "@react-web/webpack": "^0.2.0"
