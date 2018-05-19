@@ -1,7 +1,7 @@
-# react-bucket
+# react-web
 React全家桶
 
-这个项目短期的计划是给中文用户用的，方便身边的朋友。长期未考虑。
+A rich collection of react vendors and components for silky web dev experience. 
 
 
 ## Install
@@ -10,7 +10,7 @@ React全家桶
 
 ```html
 <!-- no react.js, no react-dom.js, no babel-polyfill -->
-<script src="https://cdn.jsdelivr.net/npm/react-bucket@0.0.9/umd/react-bucket.production.js" />
+<script src="https://cdn.jsdelivr.net/npm/@react-web@0.1.2/dist/vendor.production.js" />
 
 <script src="/your/app.js" />
 ```
@@ -18,52 +18,43 @@ React全家桶
 #### NPM/Development
 
 ```bash
-→ npm i react-bucket -D
+→ npm i @react-web/components -D
 ```
 
 ## Document
 
 ### Vendors
 
-Vendor | Version  | Alias | Link | Description
+Vendor | Version  |  Description
 ------------------|---------|-------|------|------------
-react             |  16.3.2 | React | [react](https://github.com/facebook/react) | A UI Framework
-react-dom| 16.3.2 | ReactDOM | [react-dom](https://github.com/facebook/react) | DOM adaptor for react
-prop-types        | 15.6.0   | PropTypes | [prop-types](https://github.com/facebook/prop-types) | Runtime type checking for React props and similar objects
-react-adopt       | 0.4.1    | ReactAdopt | [react-adopt](https://github.com/pedronauck/react-adopt) | Compose render props components
-react-grid-system | 3.1.2     | ReactGridSystem | [react-grid-system](https://github.com/JSxMachina/react-grid-system) | Bootstrap-like responsive grid system
-react-keyframes   | 0.2.3     | ReactKeyframes | [react-keyframes](https://github.com/zeit/react-keyframes) | Create frame-based animations
-react-modal       | 3.1.11     | ReactModal | [react-modal](https://github.com/reactjs/react-modal) |  Accessible modal dialog component
-react-motion      | 0.5.2     | ReactMotion | [react-motion](https://github.com/chenglou/react-motion) | A spring that solves your animation problems 
-react-redux       | 5.0.6     | ReactRedux | [react-redux](https://github.com/reactjs/react-redux) | Official React bindings for Redux
-react-router-dom  | 4.2.2     | ReactRouterDOM | [react-router-dom](https://github.com/ReactTraining/react-router) | Declarative routing for React
-react-router-redux|5.0.0-alpha.9 | ReactRouterRedux | [react-router-redux](https://github.com/ReactTraining/react-router) | Keep your state in sync with your router 
-redux             | 3.7.2    | Redux | [redux](https://github.com/reactjs/redux) | Predictable state container for JavaScript apps
-redux-thunk       | 2.2.0    | (not exported) | 
-systemjs          | 0.20.19    | SystemJS | [systemjs](https://github.com/systemjs/systemjs) | Dynamic ES module loader
-warning           | 3.0.0      | (not exported) | 
+ [react↗](https://github.com/facebook/react)             |  16.3.2 | A UI Framework
+ [react-dom](https://github.com/facebook/react) | 16.3.2 | DOM adaptor for react
+ [prop-types](https://github.com/facebook/prop-types) |  15.6.0   | Runtime type checking for React props and similar objects
+ [react-adopt](https://github.com/pedronauck/react-adopt) |  0.4.1    | Compose render props components
+ [react-grid-system](https://github.com/JSxMachina/react-grid-system) |3.1.2     |  Bootstrap-like responsive grid system
+  [react-keyframes](https://github.com/zeit/react-keyframes) | 0.2.3     |Create frame-based animations
+ [react-modal](https://github.com/reactjs/react-modal) | 3.1.11     |   Accessible modal dialog component
+ [react-motion](https://github.com/chenglou/react-motion) | 0.5.2     | A spring that solves your animation problems 
+ [react-redux](https://github.com/reactjs/react-redux) |5.0.6      |  Official React bindings for Redux
+ [react-router-dom](https://github.com/ReactTraining/react-router) |4.2.2     | Declarative routing for React
+[react-router-redux](https://github.com/ReactTraining/react-router) | 5.0.0-alpha.9 |Keep your state in sync with your router 
+  [redux](https://github.com/reactjs/redux) |3.7.2    |  Predictable state container for JavaScript apps
+redux-thunk       | 2.2.0    | thunk
+ [systemjs](https://github.com/systemjs/systemjs) | 0.20.19    |  Dynamic ES module loader
+warning           | 3.0.0      |  warning
 
 
 
 ### Component
 
 
-Component | 描述 | props
+Component | 描述 |package
 ---------|----------|---------
- `View` | 视图 | `[]`
- `Text` | 文字 | `[]`
- `ReactRouter.Link` | 链接 | `[to]`
- `ReactRouter.Switch` | 组件切换 | `[]`
- 
- ### API
-
-API | 描述 | 注意
----------|----------|---------
- `React` |  | 
- `ReactRouter` |  | 
- `StyleSheet` |  | 
- `css` |  | 
- `AppRegistry` |  | 
+ `View` | 视图 |  `@react-web/view`
+ `Text` | 文字 |  `@react-web/text`
+ `PromiseView` | Promise可视化 | `@react-web/promise-view`
+ `StyleSheet` | 样式表 | 
+ `AppRegistry` | AppRegistry | 
 
 
 #### <Menu>
