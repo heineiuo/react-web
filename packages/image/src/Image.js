@@ -21,7 +21,7 @@ class Image extends Component {
     fetchCache: 'force-cache'
   }
 
-  componentDidount = () => {
+  componentDidMount = () => {
     this.loadImage()
   }
 
