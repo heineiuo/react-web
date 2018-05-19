@@ -26,7 +26,7 @@ A rich collection of react vendors and components for silky web dev experience.
 ### Vendors
 
 Vendor | Version  |  Description
-------------------|---------|-------|------|------------
+------------------|-------------|------------
  [react↗](https://github.com/facebook/react)             |  16.3.2 | A UI Framework
  [react-dom](https://github.com/facebook/react) | 16.3.2 | DOM adaptor for react
  [prop-types](https://github.com/facebook/prop-types) |  15.6.0   | Runtime type checking for React props and similar objects
