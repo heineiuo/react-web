@@ -1,6 +1,6 @@
 {
   "name": "@react-web/components",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -17,15 +17,15 @@
     "@react-web/button": "^0.1.2",
     "@react-web/file-picker": "^0.1.0",
     "@react-web/grid": "^0.1.0",
-    "@react-web/image": "^0.1.2",
+    "@react-web/image": "^0.1.3",
     "@react-web/menu": "^0.1.2",
     "@react-web/popup": "^0.1.2",
-    "@react-web/promise-view": "^0.1.2",
+    "@react-web/promise-view": "^0.1.3",
     "@react-web/scroll-view": "^0.1.0",
     "@react-web/slider": "^0.1.0",
     "@react-web/stylesheet": "^0.1.2",
     "@react-web/text": "^0.1.0",
-    "@react-web/text-input": "^0.1.2",
+    "@react-web/text-input": "^0.1.3",
     "@react-web/touchable": "^0.1.2",
     "@react-web/utils": "^0.1.0",
     "@react-web/view": "^0.1.2"
