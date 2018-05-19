@@ -18,6 +18,8 @@ class PromiseView extends Component {
     onStateChange: new Function()
   }
 
+  state = {}
+
   componentDidMount = () => {
     this.initListener(this.props)
   }
