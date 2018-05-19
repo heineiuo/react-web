@@ -51,7 +51,7 @@ const AppRegistry = {
       store.replaceReducer(createReducer(store.asyncReducers))
     }
 
-    ReactDOM.render(
+    return ReactDOM.render(
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <AppWithRouter store={store} injectReducer={injectReducer} />
