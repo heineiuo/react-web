@@ -1,6 +1,6 @@
 {
   "name": "@react-web/text-input",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "main": "index.js",
   "files": [
     "dist",
@@ -12,8 +12,8 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/stylesheet": "^0.1.2",
-    "@react-web/view": "^0.1.2"
+    "@react-web/stylesheet": "^0.2.0",
+    "@react-web/view": "^0.2.0"
   },
   "peerDependencies": {
     "lodash": "*"

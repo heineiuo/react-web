@@ -1,6 +1,6 @@
 {
   "name": "@react-web/view",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,6 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "@react-web/stylesheet": "^0.1.2"
+    "@react-web/stylesheet": "^0.2.0"
   }
 }
