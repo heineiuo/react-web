@@ -1,12 +1,13 @@
 {
   "name": "@react-web/vendor",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "browser": "dist/vendor.production.js",
   "scripts": {
-    "build": "../../node_modules/.bin/webpack",
-    "prepublish": "babel src -d dist && npm run build"
+    "build:dev": "../../node_modules/.bin/webpack --config=webpack.dev.js",
+    "build": "../../node_modules/.bin/webpack --config=webpack.prod.js",
+    "prepublish": "babel src -d dist && npm run build:dev && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,7 @@
     "index.js"
   ],
   "devDependencies": {
-    "@react-web/webpack": "^0.1.0"
+    "@react-web/webpack": "^0.1.2"
   },
   "dependencies": {
     "attr-accept": "^1.1.0",

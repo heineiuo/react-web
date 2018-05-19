@@ -1,6 +1,6 @@
 {
-  "name": "triangle-arrow",
-  "version": "0.1.0",
+  "name": "@react-web/triangle-arrow",
+  "version": "0.1.2",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -11,6 +11,6 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/stylesheet": "^0.1.0"
+    "@react-web/stylesheet": "^0.1.2"
   }
 }
