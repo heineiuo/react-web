@@ -10,7 +10,7 @@ A rich collection of react vendors and components for silky web dev experience.
 
 ```html
 <!-- no react.js, no react-dom.js, no babel-polyfill -->
-<script src="https://cdn.jsdelivr.net/npm/@react-web@0.1.2/dist/vendor.production.js" />
+<script src="https://cdn.jsdelivr.net/npm/@react-web/vendor@0.1.2/dist/vendor.production.js" />
 
 <script src="/your/app.js" />
 ```
