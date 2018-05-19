@@ -1,3 +1,3 @@
 'use strict';
 
-module.exporst = module.exports.default = require('./dist/Image').default;
+module.exports = module.exports.default = require('./dist/Image').default;
