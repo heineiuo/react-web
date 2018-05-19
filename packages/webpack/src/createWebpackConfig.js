@@ -12,6 +12,7 @@ const createWebpackConfig = (configFile) => {
   defaults(configFile, {
     __DEV__: process.env.NODE_ENV != 'production',
     context: process.cwd(),
+    noServe: false,
     platform: 'web',
     entry: './src/index.js',
     nodeModulesDir: './node_modules',
@@ -23,6 +24,7 @@ const createWebpackConfig = (configFile) => {
 
   const {
     __DEV__,
+    noServe,
     context,
     platform,
     nodeModulesDir,
@@ -109,7 +111,7 @@ const createWebpackConfig = (configFile) => {
     // mode: __DEV__ ? 'development' : 'production'
   }
 
-  if (__DEV__) {
+  if (__DEV__ && !noServe) {
     config.serve = {
       content: __dirname,
       dev: {
