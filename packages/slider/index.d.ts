@@ -5,3 +5,7 @@
 import * as React from 'react';
 
 type P = any
+
+export default Slider
+
+declare class Slider extends React.Component<{}, any>{ }

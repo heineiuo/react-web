@@ -1,4 +1,4 @@
-// Type definitions for react-web
+// Type definitions for @react-web/promise-view
 // Project: react-web
 // Definitions by: heineiuo <https://github.com/heineiuo>
 

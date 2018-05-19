@@ -5,3 +5,10 @@
 import * as React from 'react';
 
 type P = any
+
+declare class TriangleArrow extends React.Component<{
+  wrapperStyle?: any,
+  border?: string,
+  width?: number,
+  boxShadow?: string,
+}, any> {}
