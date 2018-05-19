@@ -8,6 +8,7 @@
   },
   "files": [
     "dist",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ]
 }

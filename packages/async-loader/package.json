@@ -4,7 +4,8 @@
   "main": "index.js",
   "files": [
     "dist",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "scripts": {
     "prepublish": "babel src -d dist"

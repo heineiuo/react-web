@@ -6,6 +6,11 @@
   "scripts": {
     "prepublish": "babel src -d dist"
   },
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts"
+  ],
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
