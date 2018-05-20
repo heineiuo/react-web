@@ -11,8 +11,6 @@ declare class Image extends React.Component<{
   source: {
     uri: string
   }[]
-}, any> {
-
-}
+}, any> {}
 
 export default Image;
