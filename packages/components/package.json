@@ -1,6 +1,6 @@
 {
   "name": "@react-web/components",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -17,7 +17,7 @@
     "@react-web/box": "^0.2.0",
     "@react-web/button": "^0.2.0",
     "@react-web/file-picker": "^0.2.0",
-    "@react-web/image": "^0.2.0",
+    "@react-web/image": "^0.2.3",
     "@react-web/menu": "^0.2.0",
     "@react-web/popup": "^0.2.0",
     "@react-web/promise-view": "^0.2.0",
