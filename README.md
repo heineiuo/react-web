@@ -17,7 +17,15 @@ A rich collection of react vendors and components for silky web dev experience.
 
 #### NPM/Development
 
+vendor:
+
 ```bash
+→ npm i @react-web/vendor -D
+```
+
+components:
+
+```
 → npm i @react-web/components -D
 ```
 
@@ -50,12 +58,14 @@ warning           | 3.0.0      |  warning
 
 Component | 描述 |package
 ---------|----------|---------
- [`View`↗](./packages/view/README.md) | 视图 |  `@react-web/view`, `@react-web/components`
- [`Text`↗](./packages/text/README.md) | 文字 |  `@react-web/text`
- [`PromiseView`↗](./packages/promise-view/README.md) | Promise可视化 | `@react-web/promise-view`
- [`StyleSheet`↗](./packages/stylesheet/README.md) | 样式表 | `@react-web/stylesheet`
- <sup>*</sup>  [`AppRegistry`↗](./packages/app-registry/README.md) | AppRegistry | `@react-web/app-registry`
+[`View`↗](./packages/view/README.md) | 视图 |  `@react-web/view`, `@react-web/components`
+[`Text`↗](./packages/text/README.md) | 文字 |  `@react-web/text`
+[`PromiseView`↗](./packages/promise-view/README.md) | Promise可视化 | `@react-web/promise-view`
+[`StyleSheet`↗](./packages/stylesheet/README.md) | 样式表 | `@react-web/stylesheet`
+[`AppRegistry`↗](./packages/app-registry/README.md) | AppRegistry | `@react-web/app-registry`
+<sup>*</sup> [`Grid`↗](./packages/grid/README.md) | Grid | `@react-web/grid`
 
+<small>* : Not included in `@react-web/components`, should be installed separately.</small>
 
 
 ## License
