@@ -64,6 +64,7 @@ Component | Description | Package name
 [`Box`↗](./packages/box/README.md) | Box | `@react-web/box`
 [`Button`↗](./packages/button/README.md) | Button | `@react-web/button`
 [`FilePicker`↗](./packages/file-picker/README.md) | AppRegistry | `@react-web/file-picker`
+<sup>*</sup> [`Grid`↗](./packages/grid/README.md) | Grid | `@react-web/grid`
 [`Image`↗](./packages/app-registry/README.md) | Image | `@react-web/image`
 [`Menu`↗](./packages/menu/README.md) | Menu | `@react-web/menu`
 [`Platform`↗](./packages/platform/README.md) | Platform | `@react-web/platform`
@@ -72,14 +73,13 @@ Component | Description | Package name
 [`ScrollView`↗](./packages/scroll-view/README.md) | Scroll view | `@react-web/scroll-vew`
 [`Slider`↗](./packages/slider/README.md) | Slider | `@react-web/slider`
 [`StyleSheet`↗](./packages/stylesheet/README.md) | 样式表 | `@react-web/stylesheet`
+<sup>*</sup> [`Svg`↗](./packages/svg/README.md) | Svg | `@react-web/svg`
 [`Text`↗](./packages/text/README.md) | 文字 |  `@react-web/text`
 [`TextInput`↗](./packages/text-input/README.md) | AppRegistry | `@react-web/text-input`
 [`TouchableOpacity`↗](./packages/touchable/README.md) | AppRegistry | `@react-web/touchable`
+<sup>*</sup> [`TriangleArrow`↗](./packages/triangle-arrow/README.md) | Triangle arrow | `@react-web/triangle-arrow`
 [`Utils`↗](./packages/utils/README.md) | AppRegistry | `@react-web/utils`
 [`View`↗](./packages/view/README.md) | 视图 |  `@react-web/view`
-<sup>*</sup> [`Grid`↗](./packages/grid/README.md) | Grid | `@react-web/grid`
-<sup>*</sup> [`Svg`↗](./packages/svg/README.md) | Svg | `@react-web/svg`
-<sup>*</sup> [`TriangleArrow`↗](./packages/triangle-arrow/README.md) | Triangle arrow | `@react-web/triangle-arrow`
 
 <small>* : Not included in `@react-web/components`, should be installed separately.</small>
 
