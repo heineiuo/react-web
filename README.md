@@ -31,7 +31,10 @@ components:
 
 ## Document
 
-### Vendor
+### Vendor [![vendor]][vendor]
+
+`@react-web/vendor` bundled below packages as one file so you can use
+one script to load them all. You can spend less time to solve dependencies problems and focus on your code. 
 
 Vendor | Version  |  Description
 ------------------|-------------|------------
@@ -50,7 +53,6 @@ Vendor | Version  |  Description
 redux-thunk       | 2.2.0    | thunk
  [systemjs↗](https://github.com/systemjs/systemjs) | 0.20.19    |  Dynamic ES module loader
 warning           | 3.0.0      |  warning
-
 
 
 ### Components
@@ -82,6 +84,7 @@ Package  | Version  | Components | Description
 [`@react-web/utils`↗](./packages/utils/README.md) | [![utils]][utils] | `Utils` | Utils
 [`@react-web/view`↗](./packages/view/README.md) | [![view]][view] |  `View` |  视图
 
+[vendor]: https://img.shields.io/npm/v/@react-web/vendor.svg
 [components]: https://img.shields.io/npm/v/@react-web/components.svg
 [activity-indicator]: https://img.shields.io/npm/v/@react-web/activity-indicator.svg
 [app-registry]: https://img.shields.io/npm/v/@react-web/app-registry.svg
