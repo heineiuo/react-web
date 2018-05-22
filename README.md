@@ -74,7 +74,7 @@ Package  | Version  | Components | Description
 [`@react-web/scroll-view`↗](./packages/scroll-view/README.md) |  [![scroll-view]][scroll-view] | `ScrollView` | Scroll view
 [`@react-web/slider`↗](./packages/slider/README.md) | [![slider]][slider] | `Slider` | Slider
 [`@react-web/stylesheet`↗](./packages/stylesheet/README.md) | [![stylesheet]][stylesheet] |  `StyleSheet` |  样式表
-[`Svg`↗](./packages/svg/README.md)<sup>[2]</sup> |  WIP<sup>[3]</sup> | `@react-web/svg` | Svg
+[`@react-web/svg`↗](./packages/svg/README.md)<sup>[2]</sup> |  WIP<sup>[3]</sup> | `Svg` | Svg
 [`@react-web/text`↗](./packages/text/README.md) | [![text]][text] | `Text`  |  文字
 [`@react-web/text-input`↗](./packages/text-input/README.md) | [![text-input]][text-input] | `TextInput` |  AppRegistry
 [`@react-web/touchable`↗](./packages/touchable/README.md) | [![touchable]][touchable] | `{ TouchableOpacity }` | Touchable
