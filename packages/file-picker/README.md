@@ -1,7 +1,12 @@
+# @react-web/file-picker
 
-#### <FilePicker>
+## Usage
 
 ```js
-import { FilePicker } from 'react-bucket'
+import { FilePicker } from '@react-web/components'
+// import FilePicker from '@react-web/file-picker'
 
 ```
+
+## License
+[MIT↗](../../LICENSE)

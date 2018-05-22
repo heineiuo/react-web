@@ -1,9 +1,12 @@
+# @react-web/slider
 
 
-
-#### <Slider>
+## Usage
 
 ```js
-import { Slider } from 'react-bucket'
+import { Slider } from '@react-web/components'
 
 ```
+
+## License
+[MIT↗](../../LICENSE)

@@ -1,8 +1,11 @@
+# @react-web/activity-indicator
 
-
-#### <ActivityIndicator>
+## Usage 
 
 ```js
-import { ActivityIndicator } from 'react-bucket'
+import { ActivityIndicator } from '@react-web/components'
 
 ```
+
+## License
+[MIT↗](../../LICENSE)

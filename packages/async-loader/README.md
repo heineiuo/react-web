@@ -1,9 +1,12 @@
+# @react-web/async-loader
 
 
-#### <AsyncLoader>
+## Usage
 
 ```js
-import { AsyncLoader } from 'react-bucket'
+import AsyncLoader from '@react-web/async-loader'
 
 ```
 
+## License
+[MIT↗](../../LICENSE)

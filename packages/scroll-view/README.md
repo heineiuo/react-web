@@ -1,7 +1,13 @@
+# @react-web/scroll-view
 
-#### <ScrollView>
+
+## Usage
 
 ```js
-import { ScrollView } from 'react-bucket'
+import { ScrollView } from '@react-web/components'
+// import ScrollView from '@react-web/scroll-view'
 
 ```
+
+## License
+[MIT↗](../../LICENSE)

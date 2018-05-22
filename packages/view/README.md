@@ -1,6 +1,11 @@
-#### <View>
+# @react-web/view
+
+## Usage
 
 ```js
-import { View } from 'react-bucket'
-// import { View } from 'react-bucket/Components'
+import { View } from 'react-web/components'
+// import View from 'react-web/view'
 ```
+
+## License
+[MIT↗](../../LICENSE)

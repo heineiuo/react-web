@@ -1,8 +1,9 @@
+# @react-web/app-registry
 
-#### AppRegistry
+## Usage
 
 ```js
-import { React, AppRegistry } from 'react-bucket'
+import { AppRegistry } from '@react-web/components'
 
 const App = () => {
   return (
@@ -14,3 +15,6 @@ AppRegistry.registerComponent('app', () => App, {
   mountPoint: document.getElementById('app')
 })
 ```
+
+## License
+[MIT↗](../../LICENSE)

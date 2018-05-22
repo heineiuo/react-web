@@ -1,6 +1,10 @@
+# @react-web/text
 
-#### <Text>
+## Usage
 
 ```js
-import { Text } from 'react-bucket'
+import { Text } from '@react-web/components'
 ```
+
+## License
+[MIT↗](../../LICENSE)
