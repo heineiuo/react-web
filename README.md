@@ -31,7 +31,7 @@ components:
 
 ## Document
 
-### Vendors
+### Vendor
 
 Vendor | Version  |  Description
 ------------------|-------------|------------
@@ -56,33 +56,59 @@ warning           | 3.0.0      |  warning
 ### Components
 
 
-Component | Description | Package name
----------|----------|---------
-[`ActivityIndicator`↗](./packages/app-registry/README.md) | AppRegistry | `@react-web/app-registry`
-[`AppRegistry`↗](./packages/app-registry/README.md) | AppRegistry | `@react-web/app-registry`
-[`AsyncLoader`↗](./packages/async-loader/README.md) | Async Loader | `@react-web/async-loader`
-[`Box`↗](./packages/box/README.md) | Box | `@react-web/box`
-[`Button`↗](./packages/button/README.md) | Button | `@react-web/button`
-[`FilePicker`↗](./packages/file-picker/README.md) | AppRegistry | `@react-web/file-picker`
-<sup>*</sup> [`Grid`↗](./packages/grid/README.md) | Grid | `@react-web/grid`
-[`Image`↗](./packages/app-registry/README.md) | Image | `@react-web/image`
-[`Menu`↗](./packages/menu/README.md) | Menu | `@react-web/menu`
-[`Platform`↗](./packages/platform/README.md) | Platform | `@react-web/platform`
-[`Popup`↗](./packages/popup/README.md) | Popup layer | `@react-web/popup`
-[`PromiseView`↗](./packages/promise-view/README.md) | Promise可视化 | `@react-web/promise-view`
-[`ScrollView`↗](./packages/scroll-view/README.md) | Scroll view | `@react-web/scroll-vew`
-[`Slider`↗](./packages/slider/README.md) | Slider | `@react-web/slider`
-[`StyleSheet`↗](./packages/stylesheet/README.md) | 样式表 | `@react-web/stylesheet`
-<sup>*</sup> [`Svg`↗](./packages/svg/README.md) | Svg | `@react-web/svg`
-[`Text`↗](./packages/text/README.md) | 文字 |  `@react-web/text`
-[`TextInput`↗](./packages/text-input/README.md) | AppRegistry | `@react-web/text-input`
-[`TouchableOpacity`↗](./packages/touchable/README.md) | AppRegistry | `@react-web/touchable`
-<sup>*</sup> [`TriangleArrow`↗](./packages/triangle-arrow/README.md) | Triangle arrow | `@react-web/triangle-arrow`
-[`Utils`↗](./packages/utils/README.md) | AppRegistry | `@react-web/utils`
-[`View`↗](./packages/view/README.md) | 视图 |  `@react-web/view`
+Package  | Version  | Components | Description 
+---------|----------|------------|------------
+[`@react-web/components`↗](./packages/components/README.md)<sup>[1]</sup> | [![components]][components] | `{...}` | All the components below
+[`@react-web/activity-indicator`↗](./packages/app-registry/README.md) | [![activity-indicator]][activity-indicator] | `ActivityIndicator` | Activity Indicator 
+[`@react-web/app-registry`↗](./packages/app-registry/README.md) | [![app-registry]][app-registry] | `AppRegistry` | AppRegistry 
+[`@react-web/async-loader`↗](./packages/async-loader/README.md) | [![async-loader]][async-loader] | `AsyncLoader` | Async Loader 
+[`@react-web/box`↗](./packages/box/README.md) | [![box]][box] | `Box` | A box view
+[`@react-web/button`↗](./packages/button/README.md) | [![button]][button] | `Button`| Button
+[`@react-web/file-picker`↗](./packages/file-picker/README.md) | [![file-picker]][file-picker] | `FilePicker` | AppRegistry
+[`@react-web/grid`↗](./packages/grid/README.md)<sup>[2]</sup> | [![grid]][grid] | `Grid`|Grid
+[`@react-web/image`↗](./packages/app-registry/README.md) | [![image]][image] | `Image` | Image
+[`@react-web/menu`↗](./packages/menu/README.md) | [![menu]][menu] | `Menu`| Menu
+[`@react-web/platform`↗](./packages/platform/README.md) | [![platform]][platform] | `Platform`| Platform
+[`@react-web/popup`↗](./packages/popup/README.md) | [![popup]][popup] | `Popup` | Popup layer
+[`@react-web/promise-view`↗](./packages/promise-view/README.md) | [![promise-view]][promise-view] | `PromiseView`| Promise可视化
+[`@react-web/scroll-view`↗](./packages/scroll-view/README.md) |  [![scroll-view]][scroll-view] | `ScrollView` | Scroll view
+[`@react-web/slider`↗](./packages/slider/README.md) | [![slider]][slider] | `Slider` | Slider
+[`@react-web/stylesheet`↗](./packages/stylesheet/README.md) | [![stylesheet]][stylesheet] |  `StyleSheet` |  样式表
+[`Svg`↗](./packages/svg/README.md)<sup>[2]</sup> |  WIP<sup>[3]</sup> | `@react-web/svg` | Svg
+[`@react-web/text`↗](./packages/text/README.md) | [![text]][text] | `Text`  |  文字
+[`@react-web/text-input`↗](./packages/text-input/README.md) | [![text-input]][text-input] | `TextInput` |  AppRegistry
+[`@react-web/touchable`↗](./packages/touchable/README.md) | [![touchable]][touchable] | `{ TouchableOpacity }` | Touchable
+[`@react-web/triangle-arrow`↗](./packages/triangle-arrow/README.md)<sup>[2]</sup> | [![triangle-arrow]][triangle-arrow] |  `TriangleArrow` |  Triangle arrow
+[`@react-web/utils`↗](./packages/utils/README.md) | [![utils]][utils] | `Utils` | Utils
+[`@react-web/view`↗](./packages/view/README.md) | [![view]][view] |  `View` |  视图
 
-<small>* : Not included in `@react-web/components`, should be installed separately.</small>
+[components]: https://img.shields.io/npm/v/@react-web/components.svg
+[activity-indicator]: https://img.shields.io/npm/v/@react-web/activity-indicator.svg
+[app-registry]: https://img.shields.io/npm/v/@react-web/app-registry.svg
+[async-loader]: https://img.shields.io/npm/v/@react-web/async-loader.svg
+[box]: https://img.shields.io/npm/v/@react-web/box.svg
+[button]: https://img.shields.io/npm/v/@react-web/button.svg
+[file-picker]: https://img.shields.io/npm/v/@react-web/file-picker.svg
+[grid]: https://img.shields.io/npm/v/@react-web/grid.svg
+[image]: https://img.shields.io/npm/v/@react-web/image.svg
+[menu]: https://img.shields.io/npm/v/@react-web/menu.svg
+[platform]: https://img.shields.io/npm/v/@react-web/platform.svg
+[popup]: https://img.shields.io/npm/v/@react-web/popup.svg
+[promise-view]: https://img.shields.io/npm/v/@react-web/promise-view.svg
+[scroll-view]: https://img.shields.io/npm/v/@react-web/scroll-view.svg
+[slider]: https://img.shields.io/npm/v/@react-web/slider.svg
+[stylesheet]: https://img.shields.io/npm/v/@react-web/stylesheet.svg
+[svg]: https://img.shields.io/npm/v/@react-web/svg.svg
+[text]: https://img.shields.io/npm/v/@react-web/text.svg
+[text-input]: https://img.shields.io/npm/v/@react-web/text-input.svg
+[touchable]: https://img.shields.io/npm/v/@react-web/touchable.svg
+[triangle-arrow]:https://img.shields.io/npm/v/@react-web/triangle-arrow.svg
+[utils]: https://img.shields.io/npm/v/@react-web/utils.svg
+[view]: https://img.shields.io/npm/v/@react-web/view.svg
 
+* <small>[1] : `@react-web/components` includes all the components, exclude [2]</small>
+* <small>[2] : Not included in `@react-web/components`, should be installed separately.</small>
+* <small>[3] : Working in progress, not published.</small>
 
 ## License
 
