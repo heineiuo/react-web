@@ -1,0 +1,14 @@
+{
+  "name": "fullscreen",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babel src -d dist"
+  },
+  "files": [
+    "dist",
+    "index.d.ts",
+    "index.js"
+  ]
+}
