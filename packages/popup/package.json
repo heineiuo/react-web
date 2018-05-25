@@ -1,6 +1,6 @@
 {
   "name": "@react-web/popup",
-  "version": "0.2.0",
+  "version": "0.2.4",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -12,8 +12,8 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/stylesheet": "^0.2.0",
-    "@react-web/view": "^0.2.0"
+    "@react-web/stylesheet": "^0.2.4",
+    "@react-web/view": "^0.2.4"
   },
   "peerDependencies": {
     "lodash": "^4.17.10"

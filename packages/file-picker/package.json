@@ -1,6 +1,6 @@
 {
   "name": "@react-web/file-picker",
-  "version": "0.2.0",
+  "version": "0.2.4",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,6 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "@react-web/utils": "^0.2.0"
+    "@react-web/utils": "^0.2.4"
   }
 }

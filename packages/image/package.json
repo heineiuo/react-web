@@ -1,6 +1,6 @@
 {
   "name": "@react-web/image",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -12,10 +12,10 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/activity-indicator": "^0.2.0",
-    "@react-web/promise-view": "^0.2.0",
-    "@react-web/stylesheet": "^0.2.0",
-    "@react-web/view": "^0.2.0",
+    "@react-web/activity-indicator": "^0.2.4",
+    "@react-web/promise-view": "^0.2.4",
+    "@react-web/stylesheet": "^0.2.4",
+    "@react-web/view": "^0.2.4",
     "is-base64": "^0.0.4"
   }
 }
