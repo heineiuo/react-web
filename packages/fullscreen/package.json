@@ -1,6 +1,6 @@
 {
-  "name": "fullscreen",
-  "version": "0.2.4",
+  "name": "@react-web/fullscreen",
+  "version": "0.2.5",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
