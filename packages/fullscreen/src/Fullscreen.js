@@ -17,17 +17,26 @@ class Fullscreen extends Component {
     }
   }
 
+  componentDidMount() {
+    document.addEventListener('webkitfullscreenchange', this.handleChange, false)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('webkitfullscreenchange', this.handleChange, false)
+  }
+
+  handleChange = () => {
+    this.setState({
+      isFullscreen: this.isFullscreen()
+    })
+  }
+
   open() {
     if (this.state.isFullscreen) return;
     this.setState({
       isFullscreen: true
     }, () => {
       document.documentElement.webkitRequestFullscreen()
-      document.onwebkitfullscreenchange = (e) => {
-        if (!document.webkitFullscreenElement && getState().details.isInFullscreen) {
-          document.onwebkitfullscreenchange = null
-        }
-      }
     })
   }
 
