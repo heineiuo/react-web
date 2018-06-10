@@ -4,18 +4,22 @@
 
 import * as React from 'react';
 
-type P = any
+type RegisteredStyle<T> = number & { __registeredStyleBrand: T };
 
-
-export default StyleSheet
+class StyleMap {
+  [styleName: T]: CSSStyleDeclaration
+}
 
 declare namespace StyleSheet {
 
-  function create(styleMap: {
-    
-  })
+  type NamedStyles<T> = { [P in keyof T]: StyleMap };
 
-  function flatten()
+  export function create<T extends NamedStyles<T>>(styles: T): { [P in keyof T]: RegisteredStyle<T[P]> }
+  
+  export function flatten<T>(style?: RegisteredStyle<T>): T;
+  
+  export function assign<T>(style?: RegisteredStyle<T>): T;
 
-  function assign()
 }
+
+export default StyleSheet
