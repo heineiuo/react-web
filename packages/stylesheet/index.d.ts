@@ -6,8 +6,8 @@ import * as React from 'react';
 
 type RegisteredStyle<T> = number & { __registeredStyleBrand: T };
 
-class StyleMap {
-  [styleName: T]: CSSStyleDeclaration
+declare class StyleMap {
+  [styleName: string]: CSSStyleDeclaration
 }
 
 declare namespace StyleSheet {
