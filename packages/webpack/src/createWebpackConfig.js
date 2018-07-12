@@ -18,7 +18,7 @@ const createWebpackConfig = (configFile) => {
     nodeModulesDir: './node_modules',
     packageFile: './package.json',
     outputDir: './umd',
-    publicPathPrefix: 'https://naodong.qingtime.cn/npm',
+    publicPathPrefix: 'https://cdn.jsdelivr.net/npm',
     devPublicPathPrefix: 'http://localhost:8080'
   })
 
