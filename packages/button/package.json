@@ -1,6 +1,6 @@
 {
   "name": "@react-web/button",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -12,9 +12,9 @@
     "prepublish": "babel src -d dist"
   },
   "dependencies": {
-    "@react-web/stylesheet": "^0.2.4",
-    "@react-web/touchable": "^0.2.4",
-    "@react-web/view": "^0.2.4"
+    "@react-web/stylesheet": "^0.2.6",
+    "@react-web/touchable": "^0.2.6",
+    "@react-web/view": "^0.2.6"
   },
   "peerDependencies": {
     "@react-web/vendor": "*"
