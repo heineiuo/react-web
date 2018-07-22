@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import omit from 'lodash/omit'
 
 class AsyncLoader extends Component {
-
   static defaultProps = {
     loadKey: '',
     load: () => {},
@@ -20,8 +19,8 @@ class AsyncLoader extends Component {
           </pre>
         </div>
       )
-    },
-   
+    }
+
   }
 
   state = {
@@ -63,11 +62,11 @@ class AsyncLoader extends Component {
   renderSuccess = (CurrentComponent) => {
     const pickedProps = omit(this.props, ['load', 'loadKey'])
     return (
-      <CurrentComponent {...pickedProps}/>
+      <CurrentComponent {...pickedProps} />
     )
   }
 
-  render(){
+  render () {
     const {renderLoading, renderError} = this.props
     const {loadState, CurrentComponent, error} = this.state
 
@@ -77,11 +76,11 @@ class AsyncLoader extends Component {
 
     const renderSuccess = this.props.renderSuccess || this.renderSuccess
 
-    return loadState === 1 ?
-      renderLoading():
-      loadState === 2 ?
-        renderSuccess(CurrentComponent):
-        renderError(error)
+    return loadState === 1
+      ? renderLoading()
+      : loadState === 2
+        ? renderSuccess(CurrentComponent)
+        : renderError(error)
   }
 }
 

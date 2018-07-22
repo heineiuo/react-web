@@ -9,7 +9,6 @@ import ReduxThunk from 'redux-thunk'
 import SystemJS from 'systemjs'
 import warning from 'warning'
 
-
 const AppRegistry = {
   registerComponent: (appKey, componentProvider, config) => {
     if (config.systemConfig) {
@@ -18,10 +17,10 @@ const AppRegistry = {
     const App = componentProvider()
     const { historyType } = App
     const AppWithRouter = withRouter(App)
-    const history = historyType === 'hash' ?
-      createHashHistory() : historyType === 'browser' ?
-        createBrowserHistory() :
-        createMemoryHistory()
+    const history = historyType === 'hash'
+      ? createHashHistory() : historyType === 'browser'
+        ? createBrowserHistory()
+        : createMemoryHistory()
 
     const loggerMiddleware = store => next => action => {
       if (process.env.NODE_ENV !== 'production') console.warn(action)
