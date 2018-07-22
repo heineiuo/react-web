@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@react-web/activity-indicator": "^0.2.4",
-    "@react-web/app-registry": "^0.2.4",
     "@react-web/box": "^0.2.4",
     "@react-web/button": "^0.2.4",
     "@react-web/file-picker": "^0.2.4",
