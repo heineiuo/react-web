@@ -13,7 +13,6 @@ import Text from '@react-web/text'
 import Image from '@react-web/image'
 import Slider from '@react-web/slider'
 import ActivityIndicator from '@react-web/activity-indicator'
-import AppRegistry from '@react-web/app-registry'
 import * as Utils from '@react-web/utils'
 import StyleSheet from '@react-web/stylesheet'
 
@@ -22,7 +21,6 @@ const Style = (props) => <style {...props}>{props.children}</style>
 
 export {
   ActivityIndicator,
-  AppRegistry,
   View,
   Button,
   Box,
@@ -39,7 +37,5 @@ export {
   PromiseView,
   Utils,
   Style,
-  StyleSheet,
+  StyleSheet
 }
-
-
